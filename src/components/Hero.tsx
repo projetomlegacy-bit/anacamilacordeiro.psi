@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = () => {
         <picture className="md:hidden absolute inset-x-0 top-0">
           <source
             type="image/webp"
-            srcSet="/images/hero-mobile-aa.webp"
+            srcSet="/images/hero-mobile-ana.webp"
           />
           <img
             src="/images/hero-mobile-ana.webp"
