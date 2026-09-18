@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-orange: var(--orange);
+  --color-orange-foreground: var(--orange-foreground);
+
+  /* Specific palette color aliases */
+  --color-cacau: var(--cacau);
+  --color-lavanda: var(--lavanda);
+  --color-oliva: var(--oliva);
+  --color-argila: var(--argila);
+  --color-rosamarfim: var(--rosamarfim);
+  --color-chocolate: var(--chocolate);
+}
+
+/* Paleta 2 – Terra & Lavanda (Ativa por padrão) */
+:root,
+[data-theme="terra-lavanda"] {
+  --radius: 12px;
+
+  /* Cores oficiais da Paleta 2 */
+  --cacau: #59463C;
+  --lavanda: #82748E;
+  --oliva: #7E8164;
+  --argila: #C78169;
+  --rosamarfim: #F3E9E3;
+  --chocolate: #332A29;
+
+  /* Mapeamento Semântico para a UI */
+  --background: #F3E9E3; /* Rosa-marfinizado: Base neutra com respiro e elegância */
+  --foreground: #332A29; /* Chocolate profundo: Leitura clara e sofisticação */
+  --card: #FAF4F0;       /* Elevação suave e acolhedora sobre o fundo */
+  --card-foreground: #332A29;
+  --popover: #FAF4F0;
+  --popover-foreground: #332A29;
+  --primary: #59463C;    /* Cacau: Títulos, elementos de maior destaque, capas */
+  --primary-foreground: #FAF4F0;
+  --secondary: #E8DDD6;  /* Toque neutro suave */
+  --secondary-foreground: #332A29;
+  --muted: #E6DBD3;
+  --muted-foreground: #6B5B53;
+  --accent: #82748E;     /* Lavanda acinzentada: Secundária, complementa e traz leveza */
+  --accent-foreground: #FFFFFF;
+  --destructive: #ee3533;
+  --destructive-foreground: #FFFFFF;
+  --border: #E0D2C8;
+  --input: #ECE1DA;
+  --ring: #C78169;
+  --orange: #C78169;     /* Argila rosada: Destaque para botões, CTAs e evidências */
+  --orange-foreground: #FFFFFF;
+  
+  --gradient-hero: linear-gradient(135deg, #F3E9E3 0%, #EDE1DA 50%, #E3D4CA 100%);
+  --gradient-warm: linear-gradient(180deg, #F3E9E3 0%, #EFE5DE 100%);
+  --gradient-accent: linear-gradient(135deg, #59463C 0%, #46362F 100%);
+  --gradient-orange: linear-gradient(135deg, #D48E77 0%, #C78169 50%, #B8725B 100%);
+  --gradient-lavender: linear-gradient(135deg, #9688A1 0%, #82748E 100%);
+  --gradient-olive: linear-gradient(135deg, #8E9273 0%, #7E8164 100%);
+  
+  --shadow-warm: 0 8px 30px rgba(89, 70, 60, 0.08);
+  --shadow-soft: 0 2px 14px rgba(89, 70, 60, 0.05);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-gentle: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Paleta Original: Âmbar & Café para comparação */
+[data-theme="original"] {
+  --radius: 12px;
+  --background: #fcf7ef;
+  --foreground: #2a2119;
+  --card: #f6f0e7;
+  --card-foreground: #2a2119;
+  --popover: #fcf7ef;
+  --popover-foreground: #2a2119;
+  --primary: #4a372a;
+  --primary-foreground: #fcf7ef;
+  --secondary: #eae3d7;
+  --secondary-foreground: #2a2119;
+  --muted: #e1dcd2;
+  --muted-foreground: #6f6359;
+  --accent: #89644f;
+  --accent-foreground: #fcf7ef;
+  --destructive: #ee3533;
+  --destructive-foreground: #fcf7ef;
+  --border: #dad4c9;
+  --input: #e8e1d6;
+  --ring: #4a372a;
+  --orange: #c08880;
+  --orange-foreground: #fff;
+  
+  --cacau: #4a372a;
+  --lavanda: #89644f;
+  --oliva: #7a7d5b;
+  --argila: #c08880;
+  --rosamarfim: #fcf7ef;
+  --chocolate: #2a2119;
+  
+  --gradient-hero: linear-gradient(135deg, #eee6d9 0%, #e6dacf 100%);
+  --gradient-warm: linear-gradient(180deg, #fcf7ef 0%, #f7f0e4 100%);
+  --gradient-accent: linear-gradient(135deg, #4a372a 0%, #563b2c 100%);
+  --gradient-orange: linear-gradient(135deg, #d5a39b 0%, #b1736e 100%);
+  --gradient-lavender: linear-gradient(135deg, #9d7d6b 0%, #89644f 100%);
+  --gradient-olive: linear-gradient(135deg, #8b8e6c 0%, #7a7d5b 100%);
+  
+  --shadow-warm: 0 4px 20px rgba(74, 55, 42, 0.08);
+  --shadow-soft: 0 2px 10px rgba(111, 99, 89, 0.06);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+}
+
+.section-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container-max {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.gradient-warm {
+  background: var(--gradient-warm);
+}
+
+.gradient-accent {
+  background: var(--gradient-accent);
+}
+
+.gradient-orange {
+  background: var(--gradient-orange);
+}
+
+.shadow-warm {
+  box-shadow: var(--shadow-warm);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.transition-smooth {
+  transition: var(--transition-smooth);
+}
+
+.transition-gentle {
+  transition: var(--transition-gentle);
+}
+
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+.animate-whatsapp {
+  animation: fadeInBounce 1s ease-out forwards, breathing 4s ease-in-out infinite 3s;
+}
+
+.animate-whatsapp-pulse {
+  animation: breathing 4s ease-in-out infinite;
+}
