@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { X, Send, MapPin, Monitor, CheckCircle, Clock } from "lucide-react";
+import { X, Send, MapPin, Monitor, CheckCircle, Clock, ShieldCheck, MessageCircle } from "lucide-react";
 import { getWhatsAppUrl } from "../data/content";
 
 interface BookingModalProps {
@@ -20,6 +20,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [motivo, setMotivo] = useState("Ansiedade");
   const [mensagem, setMensagem] = useState("");
   const [enviado, setEnviado] = useState(false);
+  const [lastWhatsAppUrl, setLastWhatsAppUrl] = useState("");
 
   if (!isOpen) return null;
 
@@ -33,7 +34,17 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       (mensagem ? `Observações: ${mensagem}` : "");
 
     const url = getWhatsAppUrl(texto);
-    window.open(url, "_blank", "noopener,noreferrer");
+    setLastWhatsAppUrl(url);
+
+    // Open safely via secure anchor with rel="noopener noreferrer"
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
     setEnviado(true);
   };
 
@@ -75,23 +86,24 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               Mensagem iniciada no WhatsApp!
             </h4>
             <p className="text-muted-foreground text-sm max-w-sm mx-auto">
-              Caso a janela do WhatsApp não tenha aberto automaticamente, você pode clicar no botão abaixo para conversar.
+              Caso o aplicativo do WhatsApp não tenha aberto automaticamente, clique no botão abaixo para iniciar a conversa com a mensagem preenchida.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                onClick={() => {
-                  window.open(getWhatsAppUrl(), "_blank", "noopener,noreferrer");
-                }}
-                className="gradient-orange text-orange-foreground font-semibold px-6 py-2.5 rounded-lg text-sm shadow-warm"
+              <a
+                href={lastWhatsAppUrl || getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 gradient-orange text-orange-foreground font-semibold px-6 py-2.5 rounded-lg text-sm shadow-warm hover:brightness-110 transition-all"
               >
-                Abrir WhatsApp
-              </button>
+                <MessageCircle className="w-4 h-4" />
+                <span>Abrir WhatsApp</span>
+              </a>
               <button
                 onClick={() => {
                   setEnviado(false);
                   onClose();
                 }}
-                className="border border-border text-foreground px-5 py-2.5 rounded-lg text-sm hover:bg-muted/40"
+                className="border border-border text-foreground px-5 py-2.5 rounded-lg text-sm hover:bg-muted/40 transition-colors cursor-pointer"
               >
                 Fechar
               </button>
@@ -157,7 +169,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 id="booking-phone"
                 type="tel"
                 required
-                placeholder="(21) 99999-9999"
+                placeholder="(11) 99999-9999"
                 value={telefone}
                 onChange={(e) => setTelefone(e.target.value)}
                 className="w-full h-11 px-3.5 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent"
@@ -181,6 +193,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <option value="Sobrecarga Emocional">Sobrecarga emocional e burnout</option>
                 <option value="Baixa Autoestima">Insegurança e baixa autoestima</option>
                 <option value="Luto">Elaboração de luto e perdas</option>
+                <option value="Transições">Transições de vida e relacionamentos</option>
                 <option value="Outro">Outro motivo</option>
               </select>
             </div>
@@ -228,14 +241,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               />
             </div>
 
-            <p className="text-[11px] text-muted-foreground text-center">
-              Ao enviar, você será direcionada diretamente ao WhatsApp da psicóloga para confirmar a disponibilidade.
-            </p>
+            {/* Conformidade LGPD & Segurança */}
+            <div className="p-3 rounded-xl bg-muted/40 border border-border/50 text-[11px] text-muted-foreground flex items-start gap-2.5">
+              <ShieldCheck className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+              <p className="leading-relaxed">
+                <strong className="text-foreground font-semibold">Segurança &amp; LGPD:</strong> Seus dados não são armazenados em nenhum banco de dados ou servidor. O formulário apenas direciona você ao WhatsApp oficial da psicóloga com criptografia ponta a ponta.
+              </p>
+            </div>
 
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-base h-12 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-base h-12 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all cursor-pointer"
               >
                 <span>Conversar no WhatsApp</span>
                 <Send className="w-4 h-4" />

@@ -43,11 +43,12 @@ export const PrivacyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             Proteção de Dados (LGPD - Lei nº 13.709/2018).
           </p>
 
-          <h4 className="font-semibold text-primary text-base pt-2">1. Coleta e Uso de Informações</h4>
+          <h4 className="font-semibold text-primary text-base pt-2">1. Coleta e Uso de Informações (Zero Armazenamento no Servidor)</h4>
           <p>
-            Os dados coletados neste site (como nome e telefone) destinam-se exclusivamente para contato
-            inicial, agendamento de consultas e esclarecimento de dúvidas sobre os serviços terapêuticos.
-            Nenhum dado é compartilhado com terceiros ou utilizado para fins de marketing sem autorização.
+            Este site funciona de forma estática e não armazena dados em servidores ou bancos de dados desprotegidos.
+            Quando você preenche o formulário de agendamento, as informações (como nome, telefone e preferências)
+            são processadas exclusivamente no seu próprio navegador para gerar a mensagem inicial direcionada ao WhatsApp oficial da psicóloga.
+            A comunicação subsequente é protegida pela criptografia de ponta a ponta do próprio WhatsApp.
           </p>
 
           <h4 className="font-semibold text-primary text-base pt-2">2. Sigilo Profissional</h4>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "../data/content";
 
 interface HeaderProps {
   onOpenBooking?: () => void;
@@ -27,6 +28,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const whatsappAppointmentUrl = getWhatsAppUrl("Olá, Ana Camila! Vim pelo site e gostaria de agendar uma consulta psicológica.");
 
   return (
     <header className="sticky top-0 z-50 gradient-warm border-b border-border shadow-soft transition-all duration-300">
@@ -64,14 +67,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             ))}
           </div>
 
-          {/* Desktop Action Button */}
+          {/* Desktop Action Button (Direct WhatsApp) */}
           <div className="hidden lg:block">
-            <button
-              onClick={onOpenBooking}
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 font-semibold h-10 px-5 py-2"
+            <a
+              href={whatsappAppointmentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 font-semibold h-10 px-5 py-2"
             >
-              Agendar Consulta
-            </button>
+              <MessageCircle className="w-4 h-4" />
+              <span>Agendar Consulta</span>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,15 +105,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               </a>
             ))}
             <div className="pt-2 px-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onOpenBooking) onOpenBooking();
-                }}
+              <a
+                href={whatsappAppointmentUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold h-11 px-4 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 active:scale-98 transition-all"
               >
-                Agendar Consulta
-              </button>
+                <MessageCircle className="w-4 h-4" />
+                <span>Agendar Consulta</span>
+              </a>
             </div>
           </div>
         )}

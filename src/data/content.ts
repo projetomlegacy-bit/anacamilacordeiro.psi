@@ -216,8 +216,8 @@ export const ACQUISITION_LPS: AcquisitionLP[] = [
     id: "ansiedade",
     slug: "ansiedade",
     navTitle: "Ansiedade Feminina",
-    seoTitle: "Psicóloga para ansiedade em mulheres | Jundiaí e online",
-    seoDescription: "Psicoterapia com orientação psicanalítica para mulheres com pensamentos acelerados, autocobrança e angústia. Atendimento presencial em Jundiaí e on-line.",
+    seoTitle: "Psicóloga para Ansiedade em Mulheres em Jundiaí & On-line | Ana Camila Cordeiro",
+    seoDescription: "Psicoterapia com orientação psicanalítica para mulheres com ansiedade, pensamentos acelerados e autocobrança. Atendimento em Jundiaí e on-line. Agende sua sessão.",
     headline: "Quando a mente não desacelera e a preocupação ocupa espaço demais.",
     subheadline: "Psicoterapia para mulheres que buscam compreender e transformar sua relação com a ansiedade, reencontrando a leveza e a presença no próprio dia a dia.",
     introText: "A ansiedade feminina muitas vezes não é apenas um sintoma isolado: é reflexo de cobranças acumuladas, da pressão de dar conta de tudo e da dificuldade de encontrar pausas reais. A psicoterapia oferece uma escuta cuidadosa para olhar para o que está por trás dessa agitação e construir um caminho mais calmo e possível.",
@@ -233,11 +233,31 @@ export const ACQUISITION_LPS: AcquisitionLP[] = [
     ctaButtonText: "Quero conversar sobre minha ansiedade"
   },
   {
+    id: "luto",
+    slug: "luto",
+    navTitle: "Luto e Perdas",
+    seoTitle: "Psicóloga Especialista em Luto e Perdas em Jundiaí & On-line | Ana Camila Cordeiro",
+    seoDescription: "Acolhimento profissional e sensível para perdas, luto e términos de ciclos com a psicóloga Ana Camila Cordeiro em Jundiaí e on-line. Agende seu acolhimento.",
+    headline: "Um lugar de acolhimento para atravessar o luto no seu próprio tempo.",
+    subheadline: "Acolhimento psicológico respeitoso para perdas significativas, términos de relacionamento e transições que desestruturam a sua história.",
+    introText: "Viver um luto não significa esquecer ou apagar o vínculo com o que se perdeu. É um processo singular que precisa de espaço, validação e paciência para que a dor possa ser acolhida e novos sentidos de vida possam brotar.",
+    signsTitle: "O luto pode se manifestar de maneiras profundas:",
+    signs: [
+      "Sensação de vazio insuportável e dor intensa pela ausência",
+      "Dificuldade de reencontrar ânimo para as tarefas mais básicas",
+      "Sensação de que as pessoas ao redor esperam que você 'supere logo'",
+      "Sentimentos contraditórios de tristeza, culpa, raiva ou amortecimento"
+    ],
+    approachText: "Com acolhimento especializado em luto e perdas, caminho ao seu lado respeitando suas pausas, sem julgamentos e com todo o cuidado que a sua história merece.",
+    whatsappMessage: "Olá, Ana Camila! Vim pela página de Luto e gostaria de conversar sobre acolhimento psicológico.",
+    ctaButtonText: "Quero apoio para o meu momento de perda"
+  },
+  {
     id: "autoestima",
     slug: "autoestima",
     navTitle: "Autoestima e Autocuidado",
-    seoTitle: "Psicóloga para autoestima feminina | Jundiaí e online",
-    seoDescription: "Psicoterapia para mulheres com autocrítica excessiva, dificuldade de dizer não e baixa autoestima. Atendimento em Jundiaí e on-line.",
+    seoTitle: "Psicóloga para Autoestima e Autocuidado Feminino | Jundiaí & On-line",
+    seoDescription: "Psicoterapia para mulheres que enfrentam autocrítica, insegurança e dificuldade em impor limites. Consultório em Jundiaí e atendimento on-line. Agende.",
     headline: "Aprender a cuidar de você com a mesma dedicação com que cuida de tudo.",
     subheadline: "Um espaço seguro para você silenciar a voz da autocrítica, acolher sua história e construir uma relação de respeito e confiança consigo mesma.",
     introText: "Para muitas mulheres, colocar-se em primeiro lugar parece egoísmo. O resultado costuma ser um esgotamento silencioso e uma autoverificação constante. A psicoterapia é um convite para você reencontrar suas próprias necessidades e viver com menos peso.",
@@ -253,23 +273,63 @@ export const ACQUISITION_LPS: AcquisitionLP[] = [
     ctaButtonText: "Quero cuidar da minha autoestima"
   },
   {
-    id: "luto",
-    slug: "luto",
-    navTitle: "Luto e Perdas",
-    seoTitle: "Psicóloga especialista em luto e perdas | Jundiaí e online",
-    seoDescription: "Acolhimento profissional para perdas, morte de pessoas queridas, rupturas e fins de ciclo. Atendimento sensível com a psicóloga Ana Camila Cordeiro.",
-    headline: "Um lugar de acolhimento para atravessar o luto no seu próprio tempo.",
-    subheadline: "Acolhimento psicológico respeitoso para perdas significativas, términos de relacionamento e transições que desestruturam a sua história.",
-    introText: "Viver um luto não significa esquecer ou apagar o vínculo com o que se perdeu. É um processo singular que precisa de espaço, validação e paciência para que a dor possa ser acolhida e novos sentidos de vida possam brotar.",
-    signsTitle: "O luto pode se manifestar de maneiras profundas:",
+    id: "depressao",
+    slug: "depressao",
+    navTitle: "Depressão e Desânimo",
+    seoTitle: "Psicóloga para Depressão e Desânimo em Jundiaí & On-line | Ana Camila Cordeiro",
+    seoDescription: "Psicoterapia com orientação psicanalítica para momentos de desânimo profundo, perda de sentido e depressão. Atendimento acolhedor em Jundiaí e on-line.",
+    headline: "Quando a falta de energia e o vazio tornam os dias difíceis de sustentar.",
+    subheadline: "Um espaço seguro e sensível para escutar o que a sua dor está tentando dizer, sem julgamentos ou pressões por positividade forçada.",
+    introText: "A depressão não é fraqueza nem falta de vontade. É um sofrimento psíquico real que rouba a vitalidade, o prazer nas pequenas coisas e a perspectiva de futuro. Na psicoterapia de orientação psicanalítica, acolhemos esse desânimo, investigando as raízes do sofrimento e reconstruindo aos poucos os laços com a vida.",
+    signsTitle: "Como o desânimo e a depressão costumam se manifestar:",
     signs: [
-      "Sensação de vazio insuportável e dor intensa pela ausência",
-      "Dificuldade de reencontrar ânimo para as tarefas mais básicas",
-      "Sensação de que as pessoas ao redor esperam que você 'supere logo'",
-      "Sentimentos contraditórios de tristeza, culpa, raiva ou amortecimento"
+      "Perda gradual do interesse ou prazer em atividades que antes traziam sentido",
+      "Cansaço persistente e sensação de que a energia não se recupera após o descanso",
+      "Sentimentos de culpa, desesperança ou vontade de se isolar de quem você ama",
+      "Dificuldade de vislumbrar um futuro mais leve ou com horizontes possíveis"
     ],
-    approachText: "Com acolhimento especializado em luto e perdas, caminho ao seu lado respeitando suas pausas, sem julgamentos e com todo o cuidado que a sua história merece.",
-    whatsappMessage: "Olá, Ana Camila! Vim pela página de Luto e gostaria de conversar sobre acolhimento psicológico.",
-    ctaButtonText: "Quero apoio para o meu momento de perda"
+    approachText: "Através de uma escuta atenta e sem pressa, acolhemos aquilo que parece paralisado. Não trabalhamos com metas irreais, mas com o cuidado humano e ético que o seu momento exige.",
+    whatsappMessage: "Olá, Ana Camila! Vim pela página de Depressão e gostaria de conversar sobre atendimento psicológico.",
+    ctaButtonText: "Quero conversar sobre meu momento"
+  },
+  {
+    id: "sobrecarga",
+    slug: "sobrecarga",
+    navTitle: "Burnout e Sobrecarga",
+    seoTitle: "Psicóloga para Burnout e Sobrecarga Feminina | Jundiaí & On-line",
+    seoDescription: "Psicoterapia para exaustão emocional, sobrecarga de papéis e estresse crônico. Espaço de escuta e cuidado em Jundiaí e on-line. Converse com a psicóloga.",
+    headline: "O cansaço de ser forte o tempo todo e tentar dar conta de tudo.",
+    subheadline: "Psicoterapia para mulheres que atingiram o limite físico e emocional pela sobrecarga de demandas, cobranças e responsabilidades.",
+    introText: "Cuidar da casa, do trabalho, das relações e ainda ter que manter uma postura impecável adoece qualquer mulher. O burnout e a sobrecarga feminina surgem quando as exigências externas e a autocobrança ultrapassam qualquer limite humano. A terapia é a sua pausa inegociável para respirar, reorganizar prioridades e colocar limites saudáveis.",
+    signsTitle: "Sinais de que o esgotamento ultrapassou o limite saudável:",
+    signs: [
+      "Sensação de exaustão contínua, acordando já cansada e sem fôlego mental",
+      "Irritabilidade involuntária com pessoas queridas e esquecimentos frequentes",
+      "Sentimento de que você vive apenas para apagar incêndios e resolver urgências",
+      "Corpo manifestando sinais claros de estresse: dores, insônia e tensão muscular"
+    ],
+    approachText: "Na psicoterapia, criamos um espaço protegido para desarmar as cobranças, identificar a origem da sobrecarga e resgatar o seu direito de descansar sem carregar o fardo da culpa.",
+    whatsappMessage: "Olá, Ana Camila! Vim pela página de Burnout e Sobrecarga e gostaria de conversar sobre atendimento psicológico.",
+    ctaButtonText: "Quero cuidar da minha sobrecarga"
+  },
+  {
+    id: "transicoes",
+    slug: "transicoes",
+    navTitle: "Transições & Relacionamentos",
+    seoTitle: "Psicóloga para Transições de Vida e Relacionamentos | Jundiaí & On-line",
+    seoDescription: "Psicoterapia para mudanças de fase, términos, transições de carreira e reconstrução de vínculos afetivos. Atendimento em Jundiaí e on-line. Agende sua consulta.",
+    headline: "Quando os caminhos mudam e pedem uma nova forma de se posicionar.",
+    subheadline: "Apoio psicoterapêutico para atravessar mudanças de fase, términos, transições de carreira e reconstrução de vínculos com serenidade.",
+    introText: "Fins de relacionamento, mudanças profissionais, chegada da maternidade ou o fechamento de ciclos importantes colocam nossas antigas certezas à prova. É natural sentir medo, confusão e hesitação. A psicoterapia oferece o solo firme necessário para elaborar o que ficou para trás e dar novos passos com clareza e autonomia.",
+    signsTitle: "Como as transições costumam repercutir no dia a dia:",
+    signs: [
+      "Sensação de desorientação diante do término de um ciclo ou relação importante",
+      "Dificuldade de saber quem você é agora que as circunstâncias mudaram",
+      "Conflitos recorrentes nos vínculos afetivos e medo de estabelecer limites",
+      "Insegurança paralisante na hora de fazer escolhas ou começar de novo"
+    ],
+    approachText: "Com fundamentação psicanalítica, acolhemos as contradições naturais de qualquer mudança. Ajudamos você a nomear seus verdadeiros sentimentos e a construir vínculos mais maduros e autênticos consigo mesma e com os outros.",
+    whatsappMessage: "Olá, Ana Camila! Vim pela página de Transições e Relacionamentos e gostaria de conversar sobre atendimento psicológico.",
+    ctaButtonText: "Quero apoio para esta nova fase"
   }
 ];
