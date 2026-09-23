@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Star } from "lucide-react";
+import { Sparkles, Star } from "lucide-react";
 import { TESTIMONIALS_DATA } from "../data/content";
 
 export const Testimonials: React.FC = () => {
@@ -7,19 +7,24 @@ export const Testimonials: React.FC = () => {
     <section id="testimonials" className="py-20 bg-background" aria-labelledby="testimonials-title">
       <div className="container-max section-padding">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <MapPin className="h-5 w-5 text-accent" />
+        <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Sparkles className="h-5 w-5 text-accent" />
             <span className="text-accent font-semibold uppercase tracking-wider text-sm">
-              O que os pacientes dizem sobre o processo terapêutico
+              RELATOS E EXPERIÊNCIAS
             </span>
           </div>
+
           <h2
             id="testimonials-title"
-            className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-primary mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-primary leading-tight"
           >
-            Depoimentos
+            O que as Mulheres Atendidas Dizem
           </h2>
+
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Depoimentos reais sobre o impacto de ter um espaço seguro para falar, sentir e se transformar.
+          </p>
         </div>
 
         {/* Two Columns Grid */}
@@ -64,63 +69,66 @@ export const Testimonials: React.FC = () => {
             ))}
           </div>
 
-          {/* Right Column: Sticky Professional Credential Card */}
+          {/* Right Column: Professional Credential Card */}
           <div className="lg:sticky lg:top-24">
-            <div className="bg-gradient-to-br from-primary to-accent p-8 rounded-3xl text-primary-foreground shadow-warm border border-accent/20">
+            <div className="bg-gradient-to-br from-primary to-accent p-8 sm:p-10 rounded-3xl text-primary-foreground shadow-warm border border-accent/20">
               <div className="text-center mb-8">
                 <img
-                  src="/images/ana-avatar.webp"
-                  alt="Ana Camila Cordeiro, psicóloga clínica"
-                  className="w-40 h-40 rounded-full object-cover mx-auto mb-4 border-4 border-primary-foreground/20 shadow-lg"
+                  src="/images/psicologa-jundiai-ana-camila-cordeiro-perfil.webp"
+                  alt="Retrato profissional de Ana Camila Cordeiro, psicóloga clínica com orientação psicanalítica e 6 anos de experiência"
+                  className="w-36 h-36 rounded-full object-cover mx-auto mb-4 border-4 border-primary-foreground/20 shadow-lg"
                   loading="lazy"
                   decoding="async"
-                  width="160"
-                  height="160"
+                  width="144"
+                  height="144"
                 />
                 <h3 className="text-2xl font-playfair font-bold mb-1.5 text-primary-foreground">
                   Ana Camila Cordeiro
                 </h3>
                 <p className="text-primary-foreground/90 font-medium text-sm sm:text-base">
-                  Psicóloga Clínica
+                  Psicóloga Clínica • Orientação Psicanalítica
                 </p>
+                <div className="text-accent-foreground/80 text-xs mt-1">
+                  CRP 06/162019 SP
+                </div>
               </div>
 
               <ul className="space-y-3.5 pt-2">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary-foreground/70 rounded-full mt-2 shrink-0" />
                   <span className="text-primary-foreground/95 text-sm leading-relaxed">
-                    Graduação em Psicologia
+                    Bacharelado em Psicologia – Universidade Nove de Julho
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary-foreground/70 rounded-full mt-2 shrink-0" />
                   <span className="text-primary-foreground/95 text-sm leading-relaxed">
-                    Especialização em Psicologia Baseada em Evidências
+                    Formação e Aprofundamento em Perdas e Luto – Dra. Ana Clara Bastos
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary-foreground/70 rounded-full mt-2 shrink-0" />
                   <span className="text-primary-foreground/95 text-sm leading-relaxed">
-                    Formação em Terapia Cognitivo-comportamental (TCC)
+                    Orientação Psicanalítica (Escuta individualizada e ética)
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary-foreground/70 rounded-full mt-2 shrink-0" />
                   <span className="text-primary-foreground/95 text-sm leading-relaxed">
-                    Formação em Terapia Comportamental Dialética (DBT)
+                    MBA em Gestão de Pessoas – USP ESALQ
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary-foreground/70 rounded-full mt-2 shrink-0" />
                   <span className="text-primary-foreground/95 text-sm leading-relaxed">
-                    Formação em Psicopatologia Clínica
+                    6 anos de experiência no acompanhamento clínico de adultos
                   </span>
                 </li>
               </ul>
 
               <div className="mt-8 pt-6 border-t border-primary-foreground/20 text-center">
                 <p className="text-primary-foreground/85 text-xs sm:text-sm font-medium">
-                  CRP 06/162019 • São Paulo
+                  Atendimento Presencial em Jundiaí e On-line
                 </p>
               </div>
             </div>

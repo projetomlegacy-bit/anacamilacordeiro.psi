@@ -16,6 +16,7 @@ import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { BookingModal } from "./components/BookingModal";
 import { PrivacyModal, TermsModal } from "./components/LegalModals";
+import { AcquisitionLPs } from "./components/AcquisitionLPs";
 import { PaletteTester } from "./components/PaletteTester";
 
 export default function App() {
@@ -24,18 +25,44 @@ export default function App() {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [termsOpen, setTermsOpen] = useState(false);
   const [theme, setTheme] = useState<"terra-lavanda" | "original">("terra-lavanda");
+  const [activeLp, setActiveLp] = useState<string | null>(null);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
+
+  // Handle URL hash for dedicated Acquisition Landing Pages (e.g. #lp=ansiedade)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith("#lp=")) {
+        const slug = hash.replace("#lp=", "");
+        setActiveLp(slug);
+        window.scrollTo(0, 0);
+      } else {
+        setActiveLp(null);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const handleOpenBooking = (modalidade: "presencial" | "online" = "presencial") => {
     setPreferredModalidade(modalidade);
     setBookingOpen(true);
   };
 
-  const handleSelectSpecialty = (specialty: string) => {
-    handleOpenBooking("presencial");
+  const handleSelectLp = (slug: string) => {
+    window.location.hash = `#lp=${slug}`;
+    setActiveLp(slug);
+    window.scrollTo(0, 0);
+  };
+
+  const handleCloseLp = () => {
+    window.location.hash = "";
+    setActiveLp(null);
   };
 
   return (
@@ -46,14 +73,27 @@ export default function App() {
       {/* Header */}
       <Header onOpenBooking={() => handleOpenBooking("presencial")} />
 
-      {/* Main Content */}
+      {/* Main Content following live site architecture */}
       <main className="flex-1">
+        {/* 1. HERO */}
         <Hero onOpenBooking={() => handleOpenBooking("presencial")} />
+
+        {/* 2. SOBRE / CONVITE À PAUSA (Copy requested + 3 Cards + Quote Card) */}
         <About />
+
+        {/* 3. SINTOMAS / COMO POSSO TE AJUDAR (6 cards interativos + modal) */}
         <Symptoms onOpenBooking={() => handleOpenBooking("presencial")} />
+
+        {/* 4. ABORDAGENS (PBE, TCC, Humanizada) */}
         <Approaches />
+
+        {/* 5. SERVIÇOS (Modalidades Presencial e Online + Duração) */}
         <Services onOpenBooking={handleOpenBooking} />
+
+        {/* 6. DEPOIMENTOS */}
         <Testimonials />
+
+        {/* 7. FAQ & CONTATO */}
         <Faq onOpenBooking={() => handleOpenBooking("presencial")} />
       </main>
 
@@ -61,26 +101,38 @@ export default function App() {
       <Footer
         onOpenPrivacy={() => setPrivacyOpen(true)}
         onOpenTerms={() => setTermsOpen(true)}
-        onSelectSpecialty={handleSelectSpecialty}
+        onSelectSpecialty={handleSelectLp}
       />
 
-      {/* Floating WhatsApp Action Button */}
+      {/* Dedicated Acquisition LP overlay if navigated via URL */}
+      {activeLp && (
+        <AcquisitionLPs
+          currentLpSlug={activeLp}
+          onClose={handleCloseLp}
+          onSelectLp={handleSelectLp}
+        />
+      )}
+
+      {/* Floating Action Button */}
       <WhatsAppButton />
 
-      {/* Interactive Palette Testing & Comparison Tool */}
+      {/* Theme Switcher */}
       <PaletteTester currentTheme={theme} onThemeChange={setTheme} />
 
-      {/* Booking / Appointment Modal */}
+      {/* Interactive Modals */}
       <BookingModal
         isOpen={bookingOpen}
         onClose={() => setBookingOpen(false)}
         initialModalidade={preferredModalidade}
       />
-
-      {/* Legal Modals */}
-      <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
-      <TermsModal isOpen={termsOpen} onClose={() => setTermsOpen(false)} />
+      <PrivacyModal
+        isOpen={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+      />
+      <TermsModal
+        isOpen={termsOpen}
+        onClose={() => setTermsOpen(false)}
+      />
     </div>
   );
 }
-

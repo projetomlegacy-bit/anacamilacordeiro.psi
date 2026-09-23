@@ -1,159 +1,209 @@
 import React, { useState } from "react";
-import { MapPin, X, ArrowRight, CheckCircle2 } from "lucide-react";
-import { SYMPTOMS_DATA, Symptom } from "../data/content";
+import {
+  Sparkles,
+  Wind,
+  Feather,
+  CloudRain,
+  Scale,
+  Compass,
+  X,
+  ArrowRight,
+  CheckCircle2,
+  LucideIcon,
+} from "lucide-react";
+import { DEMANDS_DATA, Demand, getWhatsAppUrl } from "../data/content";
 
 interface SymptomsProps {
-  onOpenBooking: () => void;
+  onOpenBooking?: () => void;
 }
 
+// Minimalist line-art icons mapped in institutional color #C78169
+const DEMAND_ICONS: Record<string, LucideIcon> = {
+  ansiedade: Wind,
+  luto: Feather,
+  autoestima: Sparkles,
+  depressao: CloudRain,
+  sobrecarga: Scale,
+  transicoes: Compass,
+};
+
 export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
-  const [selectedSymptom, setSelectedSymptom] = useState<Symptom | null>(null);
+  const [selectedDemand, setSelectedDemand] = useState<Demand | null>(null);
+
+  const SelectedIcon = selectedDemand
+    ? DEMAND_ICONS[selectedDemand.id] || Sparkles
+    : Sparkles;
 
   return (
-    <section className="py-20 bg-background" aria-labelledby="symptoms-title">
+    <section id="symptoms" className="py-20 bg-background" aria-labelledby="symptoms-title">
       <div className="container-max section-padding">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <MapPin className="h-5 w-5 text-accent" />
-            <span className="text-accent font-semibold uppercase tracking-wider text-sm">
-              UM ESPAÇO SEGURO
-            </span>
+        <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-xs uppercase tracking-wider">
+            <Sparkles className="h-3.5 w-3.5 text-accent" />
+            <span>Você está passando por isso?</span>
           </div>
+
           <h2
             id="symptoms-title"
-            className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-primary mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-primary leading-tight"
           >
-            Como Posso te Ajudar
+            Algumas coisas podem estar pesando mais do que você gostaria.
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            Clique em cada área para entender como a psicoterapia aborda e transforma esses sentimentos.
+
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Cada vivência é única. Na psicoterapia, olhamos para a sua experiência real, sem rótulos ou fórmulas prontas.
           </p>
         </div>
 
-        {/* 6 Symptoms Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {SYMPTOMS_DATA.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setSelectedSymptom(item)}
-              className="group bg-card p-6 sm:p-8 rounded-2xl shadow-soft hover:shadow-warm transition-all duration-300 hover:-translate-y-2 cursor-pointer text-left border border-border/40 focus:outline-none focus:ring-2 focus:ring-accent/40"
-              aria-label={`Ver detalhes sobre ${item.title}`}
-            >
-              <div className="text-center space-y-4">
-                <div className="text-4xl sm:text-5xl mb-3 group-hover:scale-110 transition-transform duration-300 select-none">
-                  {item.emoji}
+        {/* 6 Human Experience Cards in Symmetrical 3x2 Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {DEMANDS_DATA.map((item) => {
+            const Icon = DEMAND_ICONS[item.id] || Sparkles;
+
+            return (
+              <button
+                key={item.id}
+                onClick={() => setSelectedDemand(item)}
+                className="group bg-[#FAF4F0] p-7 sm:p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-300 hover:-translate-y-1.5 cursor-pointer text-left border-0 focus:outline-none focus:ring-2 focus:ring-[#C78169]/30 flex flex-col justify-between"
+                aria-label={`Ver detalhes sobre ${item.title}`}
+              >
+                <div className="space-y-4">
+                  {/* Top Bar with Minimalist Line-art Icon in institutional #C78169 */}
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 rounded-2xl bg-[#C78169]/10 text-[#C78169] flex items-center justify-center transition-colors duration-300 group-hover:bg-[#C78169]/20">
+                      <Icon className="w-6 h-6 stroke-[1.5]" />
+                    </div>
+                    <span className="text-xs font-semibold text-accent/80 tracking-wider uppercase">
+                      Experiência
+                    </span>
+                  </div>
+
+                  <h3 className="font-playfair font-bold text-xl sm:text-2xl text-primary group-hover:text-accent transition-colors duration-200">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-foreground/90 font-medium text-sm sm:text-base leading-snug italic">
+                    "{item.experienceHeadline}"
+                  </p>
+
+                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed pt-1">
+                    {item.shortDesc}
+                  </p>
                 </div>
-                <h3 className="font-playfair font-semibold text-base sm:text-xl text-primary group-hover:text-accent transition-colors">
-                  {item.title}
-                </h3>
-              </div>
-              {/* Expanding accent underline */}
-              <div className="h-1 bg-gradient-to-r from-accent to-primary rounded-full mt-6 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-            </button>
-          ))}
+
+                <div className="pt-6">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-accent group-hover:text-primary transition-colors">
+                    <span>Entender como a terapia ajuda</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <div className="h-0.5 bg-[#C78169]/40 rounded-full mt-4 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                </div>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Reassurance Callout */}
+        {/* Reassurance Callout Box */}
         <div className="text-center mt-16">
-          <div className="bg-accent/10 border border-accent/20 p-8 rounded-3xl max-w-4xl mx-auto shadow-soft">
+          <div className="bg-[#FAF4F0] p-8 sm:p-10 rounded-3xl max-w-4xl mx-auto shadow-soft">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Se você se identifica com algum desses sintomas, saiba que{" "}
-              <span className="text-primary font-semibold">não está sozinha</span> e que{" "}
-              <span className="text-primary font-semibold">existe solução</span>. A terapia pode ser
-              o primeiro passo para o seu bem-estar emocional.
+              Se você se reconhece em alguma dessas vivências, saiba que{" "}
+              <span className="text-primary font-semibold">não precisa carregar tudo sozinha</span>. A psicoterapia é um primeiro passo para respirar, ser ouvida e se reencontrar.
             </p>
             <div className="mt-6">
               <a
-                href="https://api.whatsapp.com/send/?phone=5511948627334&text=Ol%C3%A1%2C+Ana%21+Vim+atrav%C3%A9s+do+seu+site+e+gostaria+de+agendar+uma+Consulta.+%EF%BF%BD&type=phone_number&app_absent=0"
+                href={getWhatsAppUrl("Olá, Ana Camila! Estava lendo sobre as vivências no seu site e gostaria de conversar sobre atendimento psicoterapêutico.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md font-semibold text-sm px-6 py-2.5 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-md font-semibold text-sm px-7 py-3 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all"
               >
-                Falar com a Psicóloga
+                <span>Falar com a Psicóloga</span>
+                <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Symptom Detail Modal */}
-      {selectedSymptom && (
+      {/* Demand Detail Modal */}
+      {selectedDemand && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setSelectedDemand(null)}
           role="dialog"
           aria-modal="true"
-          onClick={() => setSelectedSymptom(null)}
+          aria-labelledby="modal-title"
         >
           <div
-            className="bg-card w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-warm border border-border space-y-6 animate-in zoom-in-95 duration-200"
+            className="bg-[#FAF4F0] w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-warm space-y-6 animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl select-none">{selectedSymptom.emoji}</span>
+            {/* Modal Header */}
+            <div className="flex items-start justify-between">
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-2xl bg-[#C78169]/15 text-[#C78169] flex items-center justify-center shrink-0">
+                  <SelectedIcon className="w-6 h-6 stroke-[1.5]" />
+                </div>
                 <div>
-                  <h3 className="font-playfair font-bold text-2xl text-primary">
-                    {selectedSymptom.title}
+                  <h3 id="modal-title" className="text-2xl font-playfair font-bold text-primary">
+                    {selectedDemand.title}
                   </h3>
-                  <p className="text-xs text-accent font-medium uppercase tracking-wider">
-                    Psicoterapia Especializada
+                  <p className="text-xs text-accent font-medium mt-0.5 uppercase tracking-wider">
+                    Como a psicoterapia acolhe
                   </p>
                 </div>
               </div>
               <button
-                onClick={() => setSelectedSymptom(null)}
-                className="p-1.5 rounded-full text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                aria-label="Fechar"
+                onClick={() => setSelectedDemand(null)}
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-black/5 transition-colors cursor-pointer"
+                aria-label="Fechar janela"
               >
-                <X className="w-5 h-5" />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              {selectedSymptom.fullDesc}
-            </p>
-
-            <div className="space-y-2.5 pt-2 border-t border-border/50">
-              <h4 className="text-sm font-semibold text-primary">
-                Sinais frequentes no dia a dia:
-              </h4>
-              <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
-                {selectedSymptom.signs.map((sign, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                    <span>{sign}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Experience quote */}
+            <div className="p-4 rounded-2xl bg-accent/10 text-primary text-sm font-medium italic">
+              "{selectedDemand.experienceHeadline}"
             </div>
 
-            <div className="pt-4 flex flex-col sm:flex-row gap-3">
-              {selectedSymptom.whatsappUrl ? (
-                <a
-                  href={selectedSymptom.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm h-11 px-5 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 transition-smooth"
-                >
-                  <span>Agendar para {selectedSymptom.title}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              ) : (
-                <button
-                  onClick={() => {
-                    setSelectedSymptom(null);
-                    onOpenBooking();
-                  }}
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm h-11 px-5 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 transition-smooth"
-                >
-                  <span>Agendar para {selectedSymptom.title}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              )}
+            {/* Full description */}
+            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+              {selectedDemand.fullDesc}
+            </p>
+
+            {/* Signs / Manifestations */}
+            {selectedDemand.signs && selectedDemand.signs.length > 0 && (
+              <div className="space-y-3 pt-1">
+                <div className="text-xs font-semibold uppercase tracking-wider text-primary">
+                  Sinais e sensações comuns:
+                </div>
+                <div className="space-y-2">
+                  {selectedDemand.signs.map((sign, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90">
+                      <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                      <span>{sign}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Modal Actions */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-border/50">
+              <a
+                href={selectedDemand.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm h-11 px-5 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 transition-all"
+              >
+                <span>Conversar sobre {selectedDemand.title}</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
               <button
-                onClick={() => setSelectedSymptom(null)}
-                className="px-4 py-2.5 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:bg-muted/40 transition-colors"
+                onClick={() => setSelectedDemand(null)}
+                className="border border-border/60 text-foreground px-5 py-2.5 rounded-lg text-sm hover:bg-black/5 transition-colors cursor-pointer"
               >
                 Fechar
               </button>

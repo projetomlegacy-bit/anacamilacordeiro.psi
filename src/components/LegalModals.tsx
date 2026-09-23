@@ -66,7 +66,7 @@ export const PrivacyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           <h4 className="font-semibold text-primary text-base pt-2">4. Contato do Encarregado</h4>
           <p>
             Para qualquer dúvida ou solicitação sobre o tratamento de seus dados, entre em contato pelo telefone
-            (11) 94862-7334.
+            (11) 94668-0856.
           </p>
         </div>
 

@@ -1,9 +1,10 @@
 import React from "react";
+import { getWhatsAppUrl } from "../data/content";
 
 export const WhatsAppButton: React.FC = () => {
   return (
     <a
-      href="https://api.whatsapp.com/send/?phone=5511948627334&text=Ol%C3%A1%2C+Ana.+Gostaria+de+saber+mais+informa%C3%A7%C3%B5es+sobre+a+Terapia+com+voc%C3%AA.+%EF%BF%BD&type=phone_number&app_absent=0"
+      href={getWhatsAppUrl("Olá, Ana Camila! Gostaria de saber mais sobre a psicoterapia e consultar os horários disponíveis.")}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-[16vh] right-6 z-50 md:bottom-6 md:right-8 w-[52px] h-[52px] rounded-full bg-[#49E670] shadow-lg shadow-[#49E670]/50 flex items-center justify-center transition-all duration-300 ease-out hover:scale-110 hover:shadow-xl hover:shadow-[#49E670]/60 animate-whatsapp focus:outline-none focus:ring-4 focus:ring-[#49E670]/30 active:scale-95 cursor-pointer"

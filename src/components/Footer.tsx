@@ -5,13 +5,14 @@ import {
   Clock,
   Instagram,
   Linkedin,
+  MessageCircle,
 } from "lucide-react";
-import { CONTACT_PHONE } from "../data/content";
+import { CONTACT_PHONE, getWhatsAppUrl, DEMANDS_DATA } from "../data/content";
 
 interface FooterProps {
   onOpenPrivacy: () => void;
   onOpenTerms: () => void;
-  onSelectSpecialty?: (specialty: string) => void;
+  onSelectSpecialty?: (slug: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -23,12 +24,12 @@ export const Footer: React.FC<FooterProps> = ({
     <footer className="bg-primary text-primary-foreground border-t border-accent/20">
       <div className="container-max section-padding">
         <div className="grid lg:grid-cols-4 gap-8 py-16">
-          {/* Column 1: Brand, CRP & Socials */}
+          {/* Column 1: Brand & Socials */}
           <div className="lg:col-span-1 space-y-6">
             <a href="#home" className="inline-block hover:opacity-90 transition-opacity">
               <img
-                src="/images/logo-completo-branco.webp"
-                alt="Ana Camila Cordeiro, Psicóloga Clínica"
+                src="/images/logo-psicologa-ana-camila-cordeiro-branca.webp"
+                alt="Logotipo oficial da psicóloga Ana Camila Cordeiro - Atendimento presencial em Jundiaí e on-line (CRP 06/162019)"
                 title="Ana Camila Cordeiro, Psicóloga Clínica"
                 className="h-8 md:h-9 w-auto object-contain"
                 width="1862"
@@ -64,11 +65,20 @@ export const Footer: React.FC<FooterProps> = ({
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp da psicóloga Ana Camila Cordeiro"
+                  className="w-10 h-10 bg-accent/25 rounded-full flex items-center justify-center hover:bg-accent/40 text-primary-foreground transition-all duration-200"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Locais de Atendimento */}
+          {/* Column 2: Atendimentos */}
           <div className="space-y-4">
             <h3 className="font-playfair font-semibold text-lg text-primary-foreground">
               Atendimentos
@@ -85,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
                 <a
-                  href="tel:+5511948627334"
+                  href={`tel:${CONTACT_PHONE.replace(/[^0-9]/g, "")}`}
                   className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
                 >
                   {CONTACT_PHONE}
@@ -122,7 +132,7 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="w-9 h-9 bg-accent/25 rounded-full flex items-center justify-center hover:bg-accent/40 text-primary-foreground transition-all"
+                  className="w-9 h-9 bg-accent/25 rounded-full flex items-center justify-center hover:bg-accent/40 text-primary-foreground transition-colors"
                 >
                   <Instagram className="h-4 w-4" />
                 </a>
@@ -131,9 +141,18 @@ export const Footer: React.FC<FooterProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="w-9 h-9 bg-accent/25 rounded-full flex items-center justify-center hover:bg-accent/40 text-primary-foreground transition-all"
+                  className="w-9 h-9 bg-accent/25 rounded-full flex items-center justify-center hover:bg-accent/40 text-primary-foreground transition-colors"
                 >
                   <Linkedin className="h-4 w-4" />
+                </a>
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="w-9 h-9 bg-accent/25 rounded-full flex items-center justify-center hover:bg-accent/40 text-primary-foreground transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -145,46 +164,37 @@ export const Footer: React.FC<FooterProps> = ({
               Especialidades
             </h3>
             <ul className="text-sm text-primary-foreground/80 space-y-2">
-              <li
-               // onClick={() => onSelectSpecialty && onSelectSpecialty("TCC")}
-                className="cursor-pointer hover:text-accent-foreground transition-colors hover:translate-x-1 duration-150"
-              >
-                • Terapia Cognitivo-Comportamental
-              </li>
-              <li
-               // onClick={() => onSelectSpecialty && onSelectSpecialty("Ansiedade e Depressão")}
-                className="cursor-pointer hover:text-accent-foreground transition-colors hover:translate-x-1 duration-150"
-              >
-                • Ansiedade e Depressão
-              </li>
-              <li
-               // onClick={() => onSelectSpecialty && onSelectSpecialty("Autocobrança")}
-                className="cursor-pointer hover:text-accent-foreground transition-colors hover:translate-x-1 duration-150"
-              >
-                • Autocobrança e Sobrecarga Emocional
-              </li>
-              <li
-               // onClick={() => onSelectSpecialty && onSelectSpecialty("Autoestima")}
-                className="cursor-pointer hover:text-accent-foreground transition-colors hover:translate-x-1 duration-150"
-              >
-                • Insegurança e Baixa Autoestima
-              </li>
-              <li
-              
-                //onClick={() => onSelectSpecialty && onSelectSpecialty("Relacionamentos")}
-                className="cursor-pointer hover:text-accent-foreground transition-colors hover:translate-x-1 duration-150"
-              >
-                • Dificuldade em Lidar com o Luto
-              </li>
+              {DEMANDS_DATA.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => {
+                      if (onSelectSpecialty) onSelectSpecialty(item.id);
+                    }}
+                    className="hover:text-accent transition-colors hover:translate-x-1 duration-150 inline-flex items-center gap-1.5 focus:outline-none cursor-pointer"
+                  >
+                    <span>• {item.title}</span>
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
+        {/* Ethical Notice & Emergencies */}
+        <div className="border-t border-primary-foreground/15 pt-8 pb-4 text-xs text-primary-foreground/60 space-y-2 text-center md:text-left">
+          <p>
+            Atendimento psicológico realizado em conformidade com o Código de Ética Profissional do Psicólogo e as diretrizes do CFP.
+          </p>
+          <p>
+            Este site não presta serviços de urgência psicológica. Em caso de crise, procure o serviço de emergência mais próximo ou ligue para o <strong>CVV no número 188</strong> (ligação gratuita).
+          </p>
+        </div>
+
         {/* Bottom Legal bar */}
-        <div className="border-t border-primary-foreground/15 py-8">
+        <div className="border-t border-primary-foreground/15 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-primary-foreground/70">
             <div>
-              © {new Date().getFullYear()} Ana Camila Cordeiro. Todos os direitos reservados.
+              © {new Date().getFullYear()} Ana Camila Cordeiro · CRP 06/162019. Todos os direitos reservados.
             </div>
             <div className="flex gap-6">
               <button
