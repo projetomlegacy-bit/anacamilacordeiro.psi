@@ -26,11 +26,11 @@ export const Approaches: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Approach Cards Grid with live site visual identity */}
+        {/* 3 Approach Cards Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Card 1: Escuta do Inconsciente */}
           <div className="group">
-            <div className="bg-card p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-3 h-full border border-border/40 flex flex-col justify-between">
+            <div className="bg-card p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-2 h-full border border-border/40 flex flex-col justify-between">
               <div className="space-y-6">
                 <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-300">
                   <Compass className="h-8 w-8 text-accent" />
@@ -50,7 +50,7 @@ export const Approaches: React.FC = () => {
 
           {/* Card 2: Elaboração Psíquica da Dor */}
           <div className="group">
-            <div className="bg-card p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-3 h-full border border-border/40 flex flex-col justify-between">
+            <div className="bg-card p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-2 h-full border border-border/40 flex flex-col justify-between">
               <div className="space-y-6">
                 <div className="w-16 h-16 bg-oliva/20 rounded-2xl flex items-center justify-center group-hover:bg-oliva/30 transition-colors duration-300">
                   <HeartHandshake className="h-8 w-8 text-oliva" />
@@ -70,7 +70,7 @@ export const Approaches: React.FC = () => {
 
           {/* Card 3: Singularidade e Respeito à sua História */}
           <div className="group">
-            <div className="bg-card p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-3 h-full border border-border/40 flex flex-col justify-between">
+            <div className="bg-card p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-500 hover:-translate-y-2 h-full border border-border/40 flex flex-col justify-between">
               <div className="space-y-6">
                 <div className="w-16 h-16 bg-orange/20 rounded-2xl flex items-center justify-center group-hover:bg-orange/30 transition-colors duration-300">
                   <Sparkles className="h-8 w-8 text-orange" />
@@ -85,6 +85,35 @@ export const Approaches: React.FC = () => {
                 </div>
               </div>
               <div className="h-1 bg-gradient-to-r from-orange to-primary rounded-full mt-6 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </div>
+          </div>
+        </div>
+
+        {/* Featured Horizontal Image Frame (Bordas suavizadas e leves) */}
+        <div className="mt-12 sm:mt-16 max-w-5xl mx-auto">
+          <div className="relative bg-[#FAF4F0] p-3 sm:p-5 md:p-6 rounded-3xl sm:rounded-[2.25rem] shadow-soft border-0 transition-all duration-500 hover:shadow-warm">
+            {/* Subtle Tone-on-Tone Decorative Dots */}
+            <div
+              className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 w-2 h-2 rounded-full bg-[#C78169]/25"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute bottom-3.5 left-3.5 sm:bottom-4 sm:left-4 w-2 h-2 rounded-full bg-[#C78169]/25"
+              aria-hidden="true"
+            />
+
+            {/* Inner Soft Rounded Image */}
+            <div className="overflow-hidden rounded-2xl sm:rounded-[1.75rem]">
+              <img
+                src="/images/psicologa-ana-camila-cordeiro-consultorio-jundiai.webp"
+                alt="Psicóloga clínica Ana Camila Cordeiro em atendimento em seu consultório em Jundiaí - Psicoterapia acolhedora para mulheres presencial e on-line"
+                title="Consultório de Psicologia Ana Camila Cordeiro - Atendimento em Jundiaí e On-line"
+                className="w-full h-auto object-cover max-h-[520px] transition-transform duration-700 hover:scale-[1.01]"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="675"
+              />
             </div>
           </div>
         </div>

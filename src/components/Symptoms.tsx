@@ -56,7 +56,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
           </p>
         </div>
 
-        {/* 6 Human Experience Cards in Symmetrical 3x2 Grid */}
+        {/* 6 Human Experience Cards in Symmetrical 3x2 Grid with rgba(199, 129, 105, 0.15) border and ~20% larger icons */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {DEMANDS_DATA.map((item) => {
             const Icon = DEMAND_ICONS[item.id] || Sparkles;
@@ -65,16 +65,17 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
               <button
                 key={item.id}
                 onClick={() => setSelectedDemand(item)}
-                className="group bg-[#FAF4F0] p-7 sm:p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-300 hover:-translate-y-1.5 cursor-pointer text-left border-0 focus:outline-none focus:ring-2 focus:ring-[#C78169]/30 flex flex-col justify-between"
+                style={{ borderColor: "rgba(199, 129, 105, 0.20)" }}
+                className="group bg-[#FAF4F0] p-7 sm:p-8 rounded-3xl shadow-soft border hover:border-[#C78169]/40 hover:shadow-warm transition-all duration-300 hover:-translate-y-2 cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#C78169]/30 flex flex-col justify-between"
                 aria-label={`Ver detalhes sobre ${item.title}`}
               >
                 <div className="space-y-4">
-                  {/* Top Bar with Minimalist Line-art Icon in institutional #C78169 */}
+                  {/* Top Bar with ~20% Larger Line-art Icon in institutional #C78169 */}
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-[#C78169]/10 text-[#C78169] flex items-center justify-center transition-colors duration-300 group-hover:bg-[#C78169]/20">
-                      <Icon className="w-6 h-6 stroke-[1.5]" />
+                    <div className="w-14 h-14 rounded-2xl bg-[#C78169]/10 text-[#C78169] flex items-center justify-center transition-all duration-300 group-hover:bg-[#C78169]/20 group-hover:scale-105">
+                      <Icon className="w-7 h-7 sm:w-7.5 sm:h-7.5 stroke-[1.6]" />
                     </div>
-                    <span className="text-xs font-semibold text-accent/80 tracking-wider uppercase">
+                    <span className="text-xs font-semibold text-accent/85 tracking-wider uppercase">
                       Experiência
                     </span>
                   </div>
@@ -106,7 +107,10 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
 
         {/* Reassurance Callout Box */}
         <div className="text-center mt-16">
-          <div className="bg-[#FAF4F0] p-8 sm:p-10 rounded-3xl max-w-4xl mx-auto shadow-soft">
+          <div
+            style={{ borderColor: "rgba(199, 129, 105, 0.20)" }}
+            className="bg-[#FAF4F0] p-8 sm:p-10 rounded-3xl max-w-4xl mx-auto shadow-soft border"
+          >
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Se você se reconhece em alguma dessas vivências, saiba que{" "}
               <span className="text-primary font-semibold">não precisa carregar tudo sozinha</span>. A psicoterapia é um primeiro passo para respirar, ser ouvida e se reencontrar.
@@ -116,7 +120,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                 href={getWhatsAppUrl("Olá, Ana Camila! Estava lendo sobre as vivências no seu site e gostaria de conversar sobre atendimento psicoterapêutico.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md font-semibold text-sm px-7 py-3 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm px-7 py-3 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all"
               >
                 <span>Falar com a Psicóloga</span>
                 <ArrowRight className="h-4 w-4" />
@@ -136,14 +140,14 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
           aria-labelledby="modal-title"
         >
           <div
-            className="bg-[#FAF4F0] w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-warm space-y-6 animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto"
+            className="bg-[#FAF4F0] w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-warm space-y-6 animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto border border-[#C78169]/20"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-2xl bg-[#C78169]/15 text-[#C78169] flex items-center justify-center shrink-0">
-                  <SelectedIcon className="w-6 h-6 stroke-[1.5]" />
+                <div className="w-14 h-14 rounded-2xl bg-[#C78169]/15 text-[#C78169] flex items-center justify-center shrink-0">
+                  <SelectedIcon className="w-7 h-7 stroke-[1.6]" />
                 </div>
                 <div>
                   <h3 id="modal-title" className="text-2xl font-playfair font-bold text-primary">
@@ -196,14 +200,14 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                 href={selectedDemand.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm h-11 px-5 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 transition-all"
+                className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm h-11 px-5 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 transition-all"
               >
                 <span>Conversar sobre {selectedDemand.title}</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
               <button
                 onClick={() => setSelectedDemand(null)}
-                className="border border-border/60 text-foreground px-5 py-2.5 rounded-lg text-sm hover:bg-black/5 transition-colors cursor-pointer"
+                className="border border-border/60 text-foreground px-5 py-2.5 rounded-xl text-sm hover:bg-black/5 transition-colors cursor-pointer"
               >
                 Fechar
               </button>
