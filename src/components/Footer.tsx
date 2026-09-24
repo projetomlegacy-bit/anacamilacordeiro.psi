@@ -13,12 +13,14 @@ interface FooterProps {
   onOpenPrivacy: () => void;
   onOpenTerms: () => void;
   onSelectSpecialty?: (slug: string) => void;
+  onOpenBrandGuide?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onOpenPrivacy,
   onOpenTerms,
   onSelectSpecialty,
+  onOpenBrandGuide,
 }) => {
   return (
     <footer className="bg-primary text-primary-foreground border-t border-accent/20">
@@ -196,7 +198,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div>
               © {new Date().getFullYear()} Ana Camila Cordeiro · CRP 06/162019. Todos os direitos reservados.
             </div>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <button
                 onClick={onOpenPrivacy}
                 className="hover:text-primary-foreground transition-colors cursor-pointer focus:outline-none"
@@ -209,6 +211,15 @@ export const Footer: React.FC<FooterProps> = ({
               >
                 Termos de Uso
               </button>
+              {onOpenBrandGuide && (
+                <button
+                  onClick={onOpenBrandGuide}
+                  className="hover:text-accent text-primary-foreground/75 hover:opacity-100 transition-colors cursor-pointer focus:outline-none"
+                  title="Manual de Identidade Visual e Branding"
+                >
+                  Manual da Marca
+                </button>
+              )}
             </div>
           </div>
         </div>

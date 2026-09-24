@@ -17,30 +17,37 @@ import { WhatsAppButton } from "./components/WhatsAppButton";
 import { BookingModal } from "./components/BookingModal";
 import { PrivacyModal, TermsModal } from "./components/LegalModals";
 import { AcquisitionLPs } from "./components/AcquisitionLPs";
-import { PaletteTester } from "./components/PaletteTester";
+import { BrandGuide } from "./components/BrandGuide";
 
 export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
   const [preferredModalidade, setPreferredModalidade] = useState<"presencial" | "online">("presencial");
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [termsOpen, setTermsOpen] = useState(false);
-  const [theme, setTheme] = useState<"terra-lavanda" | "original">("terra-lavanda");
+  const [theme] = useState<"terra-lavanda" | "original">("terra-lavanda");
   const [activeLp, setActiveLp] = useState<string | null>(null);
+  const [brandGuideOpen, setBrandGuideOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
-  // Handle URL hash for dedicated Acquisition Landing Pages (e.g. #lp=ansiedade)
+  // Handle URL hash for dedicated Acquisition Landing Pages or Brand Guide
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
-      if (hash.startsWith("#lp=")) {
+      if (hash === "#manual-da-marca" || hash === "#brand-guide") {
+        setBrandGuideOpen(true);
+        setActiveLp(null);
+        window.scrollTo(0, 0);
+      } else if (hash.startsWith("#lp=")) {
         const slug = hash.replace("#lp=", "");
         setActiveLp(slug);
+        setBrandGuideOpen(false);
         window.scrollTo(0, 0);
       } else {
         setActiveLp(null);
+        setBrandGuideOpen(false);
       }
     };
 
@@ -65,6 +72,22 @@ export default function App() {
     setActiveLp(null);
   };
 
+  const handleOpenBrandGuide = () => {
+    window.location.hash = "#manual-da-marca";
+    setBrandGuideOpen(true);
+    window.scrollTo(0, 0);
+  };
+
+  const handleCloseBrandGuide = () => {
+    window.location.hash = "";
+    setBrandGuideOpen(false);
+  };
+
+  // If user navigated to Brand Style Guide, display the dedicated Branding Manual
+  if (brandGuideOpen) {
+    return <BrandGuide onClose={handleCloseBrandGuide} />;
+  }
+
   return (
     <div
       data-theme={theme}
@@ -78,16 +101,16 @@ export default function App() {
         {/* 1. HERO */}
         <Hero onOpenBooking={() => handleOpenBooking("presencial")} />
 
-        {/* 2. SOBRE / CONVITE À PAUSA (Copy requested + 3 Cards + Quote Card) */}
+        {/* 2. SOBRE / CONVITE À PAUSA */}
         <About />
 
-        {/* 3. SINTOMAS / COMO POSSO TE AJUDAR (6 cards interativos + modal) */}
+        {/* 3. SINTOMAS / COMO POSSO TE AJUDAR */}
         <Symptoms onOpenBooking={() => handleOpenBooking("presencial")} />
 
-        {/* 4. ABORDAGENS (PBE, TCC, Humanizada) */}
+        {/* 4. ABORDAGENS (Psicanálise, Acolhimento) */}
         <Approaches />
 
-        {/* 5. SERVIÇOS (Modalidades Presencial e Online + Duração) */}
+        {/* 5. SERVIÇOS (Modalidades Presencial e Online) */}
         <Services onOpenBooking={handleOpenBooking} />
 
         {/* 6. DEPOIMENTOS */}
@@ -97,11 +120,12 @@ export default function App() {
         <Faq onOpenBooking={() => handleOpenBooking("presencial")} />
       </main>
 
-      {/* Footer */}
+      {/* Footer with discreet link to Brand Guide */}
       <Footer
         onOpenPrivacy={() => setPrivacyOpen(true)}
         onOpenTerms={() => setTermsOpen(true)}
         onSelectSpecialty={handleSelectLp}
+        onOpenBrandGuide={handleOpenBrandGuide}
       />
 
       {/* Dedicated Acquisition LP overlay if navigated via URL */}
@@ -115,9 +139,6 @@ export default function App() {
 
       {/* Floating Action Button */}
       <WhatsAppButton />
-
-      {/* Theme Switcher */}
-      <PaletteTester currentTheme={theme} onThemeChange={setTheme} />
 
       {/* Interactive Modals */}
       <BookingModal
