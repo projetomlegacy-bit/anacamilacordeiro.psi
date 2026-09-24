@@ -39,8 +39,8 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
       <div className="container-max section-padding">
         {/* Section Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#A85D46]/10 border border-[#A85D46]/20 text-[#A85D46] font-medium text-xs uppercase tracking-wider">
-            <Sparkles className="h-3.5 w-3.5 text-[#A85D46]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7A3B28]/10 border border-[#7A3B28]/20 text-[#7A3B28] font-semibold text-xs uppercase tracking-wider">
+            <Sparkles className="h-3.5 w-3.5 text-[#7A3B28]" />
             <span>Você está passando por isso?</span>
           </div>
 
@@ -75,7 +75,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                     <div className="w-14 h-14 rounded-2xl bg-[#C78169]/10 text-[#C78169] flex items-center justify-center transition-all duration-300 group-hover:bg-[#C78169]/20 group-hover:scale-105">
                       <Icon className="w-7 h-7 sm:w-7.5 sm:h-7.5 stroke-[1.6]" />
                     </div>
-                    <span className="text-xs font-semibold text-[#A85D46] tracking-wider uppercase">
+                    <span className="text-xs font-semibold text-[#7A3B28] tracking-wider uppercase">
                       Experiência
                     </span>
                   </div>
@@ -94,7 +94,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                 </div>
 
                 <div className="pt-6">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#A85D46] group-hover:text-primary transition-colors">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#7A3B28] group-hover:text-primary transition-colors">
                     <span>Entender como a terapia ajuda</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -153,7 +153,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                   <h3 id="modal-title" className="text-2xl font-playfair font-bold text-primary">
                     {selectedDemand.title}
                   </h3>
-                  <p className="text-xs text-[#A85D46] font-medium mt-0.5 uppercase tracking-wider">
+                  <p className="text-xs text-[#7A3B28] font-semibold mt-0.5 uppercase tracking-wider">
                     Como a psicoterapia acolhe
                   </p>
                 </div>
@@ -186,7 +186,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                 <div className="space-y-2">
                   {selectedDemand.signs.map((sign, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90">
-                      <CheckCircle2 className="w-4 h-4 text-[#A85D46] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#7A3B28] shrink-0 mt-0.5" />
                       <span>{sign}</span>
                     </div>
                   ))}

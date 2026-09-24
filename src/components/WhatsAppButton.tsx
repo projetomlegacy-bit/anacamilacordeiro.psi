@@ -7,7 +7,7 @@ export const WhatsAppButton: React.FC = () => {
       href={getWhatsAppUrl("Olá, Ana Camila! Gostaria de saber mais sobre a psicoterapia e consultar os horários disponíveis.")}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-[16vh] right-6 z-50 md:bottom-6 md:right-8 w-[52px] h-[52px] rounded-full bg-[#49E670] shadow-lg shadow-[#49E670]/50 flex items-center justify-center transition-all duration-300 ease-out hover:scale-110 hover:shadow-xl hover:shadow-[#49E670]/60 animate-whatsapp focus:outline-none focus:ring-4 focus:ring-[#49E670]/30 active:scale-95 cursor-pointer"
+      className="fixed bottom-[16vh] right-6 z-50 md:bottom-6 md:right-8 w-[52px] h-[52px] rounded-full bg-[#49E670] shadow-lg shadow-[#49E670]/50 flex items-center justify-center transition-transform duration-300 ease-out hover:scale-110 hover:shadow-xl hover:shadow-[#49E670]/60 animate-whatsapp will-change-transform focus:outline-none focus:ring-4 focus:ring-[#49E670]/30 active:scale-95 cursor-pointer"
       aria-label="Agendar consulta pelo WhatsApp"
       title="Falar no WhatsApp"
     >

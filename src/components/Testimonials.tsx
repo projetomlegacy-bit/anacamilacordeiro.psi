@@ -9,8 +9,8 @@ export const Testimonials: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <Sparkles className="h-5 w-5 text-[#A85D46]" />
-            <span className="text-[#A85D46] font-semibold uppercase tracking-wider text-sm">
+            <Sparkles className="h-5 w-5 text-[#7A3B28]" />
+            <span className="text-[#7A3B28] font-semibold uppercase tracking-wider text-sm">
               RELATOS E EXPERIÊNCIAS
             </span>
           </div>
