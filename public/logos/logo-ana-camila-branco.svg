@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap');
+      .monogram-white { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; fill: #FFFFFF; letter-spacing: -2px; }
+      .separator-white { stroke: #FFFFFF; stroke-opacity: 0.45; stroke-width: 1.5; }
+      .brand-title-white { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; fill: #FAF4F0; letter-spacing: 0.5px; }
+      .brand-subtitle-white { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; fill: #F3E9E3; letter-spacing: 4px; text-transform: uppercase; opacity: 0.9; }
+    </style>
+  </defs>
+  <!-- Monogram AC White -->
+  <text x="12" y="68" class="monogram-white">AC</text>
+  <!-- Vertical subtle separator -->
+  <line x1="96" y1="22" x2="96" y2="78" class="separator-white" />
+  <!-- Brand Text White -->
+  <text x="115" y="47" class="brand-title-white">Ana Camila Cordeiro</text>
+  <text x="116" y="68" class="brand-subtitle-white">Psicóloga Clínica</text>
+</svg>

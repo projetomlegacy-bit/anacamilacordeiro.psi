@@ -1,0 +1,67 @@
+{
+  "brandName": "Ana Camila Cordeiro - Psicóloga Clínica",
+  "paletteName": "Terra & Lavanda",
+  "version": "2.0",
+  "colors": [
+    {
+      "name": "Cacau",
+      "hex": "#59463C",
+      "rgb": [89, 70, 60],
+      "cmyk": [45, 55, 60, 40],
+      "role": "Primária / Fundo Nobre / Títulos"
+    },
+    {
+      "name": "Argila Rosada",
+      "hex": "#C78169",
+      "rgb": [199, 129, 105],
+      "cmyk": [18, 55, 55, 5],
+      "role": "Destaque / Acentos / CTA WhatsApp"
+    },
+    {
+      "name": "Lavanda Acinzentada",
+      "hex": "#82748E",
+      "rgb": [130, 116, 142],
+      "cmyk": [45, 48, 25, 5],
+      "role": "Secundária / Acolhimento / Tags"
+    },
+    {
+      "name": "Oliva Suave",
+      "hex": "#7E8164",
+      "rgb": [126, 129, 100],
+      "cmyk": [42, 30, 55, 10],
+      "role": "Apoio / Natureza / Selos"
+    },
+    {
+      "name": "Rosa-Marfinizado",
+      "hex": "#F3E9E3",
+      "rgb": [243, 233, 227],
+      "cmyk": [4, 7, 9, 0],
+      "role": "Fundo Suave / Miolo de Carrosséis"
+    },
+    {
+      "name": "Chocolate Profundo",
+      "hex": "#332A29",
+      "rgb": [51, 42, 41],
+      "cmyk": [50, 60, 60, 65],
+      "role": "Texto de Leitura (Substituto do Preto Puro)"
+    },
+    {
+      "name": "Bege Aveludado",
+      "hex": "#FAF4F0",
+      "rgb": [250, 244, 240],
+      "cmyk": [2, 3, 5, 0],
+      "role": "Base Web / Feed Neutro"
+    },
+    {
+      "name": "Branco Puro",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "cmyk": [0, 0, 0, 0],
+      "role": "Respiro / Luz"
+    }
+  ],
+  "typography": {
+    "display": "Playfair Display (Google Fonts)",
+    "body": "Inter / Plus Jakarta Sans (Google Fonts)"
+  }
+}

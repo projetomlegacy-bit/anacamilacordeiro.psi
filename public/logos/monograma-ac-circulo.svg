@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&amp;display=swap');
+      .mono-ac { font-family: 'Playfair Display', serif; font-size: 78px; font-weight: 700; font-style: italic; fill: #C78169; }
+      .mono-circle { fill: none; stroke: #59463C; stroke-width: 2.5; stroke-opacity: 0.25; }
+    </style>
+  </defs>
+  <circle cx="60" cy="60" r="54" class="mono-circle" />
+  <text x="60" y="85" text-anchor="middle" class="mono-ac">AC</text>
+</svg>
