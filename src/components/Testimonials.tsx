@@ -9,8 +9,8 @@ export const Testimonials: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <Sparkles className="h-5 w-5 text-accent" />
-            <span className="text-accent font-semibold uppercase tracking-wider text-sm">
+            <Sparkles className="h-5 w-5 text-[#A85D46]" />
+            <span className="text-[#A85D46] font-semibold uppercase tracking-wider text-sm">
               RELATOS E EXPERIÊNCIAS
             </span>
           </div>
@@ -36,7 +36,7 @@ export const Testimonials: React.FC = () => {
                 <div className="bg-card p-8 rounded-3xl shadow-soft hover:shadow-warm transition-all duration-300 hover:-translate-y-1 border border-border/40">
                   <div className="space-y-6">
                     {/* Star Rating */}
-                    <div className="flex gap-1" aria-label="5 estrelas">
+                    <div className="flex gap-1" role="img" aria-label="Avaliação 5 estrelas">
                       {[...Array(t.rating)].map((_, i) => (
                         <Star
                           key={i}

@@ -34,8 +34,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
         {/* Section Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <Sparkles className="h-5 w-5 text-accent" />
-            <span className="text-accent font-semibold uppercase tracking-wider text-sm">
+            <Sparkles className="h-5 w-5 text-[#A85D46]" />
+            <span className="text-[#A85D46] font-semibold uppercase tracking-wider text-sm">
               COMO FUNCIONA O ATENDIMENTO
             </span>
           </div>
@@ -106,7 +106,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     <h3 className="text-2xl font-playfair font-semibold text-primary group-hover:text-accent transition-colors duration-300">
                       Consulta Presencial
                     </h3>
-                    <p className="text-xs text-accent font-medium mt-0.5">Jundiaí - SP</p>
+                    <p className="text-xs text-[#A85D46] font-medium mt-0.5">Jundiaí - SP</p>
                   </div>
                 </div>
 
@@ -163,7 +163,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     <h3 className="text-2xl font-playfair font-semibold text-primary group-hover:text-orange transition-colors duration-300">
                       Terapia On-line
                     </h3>
-                    <p className="text-xs text-orange font-medium mt-0.5">Todo o Brasil e Exterior</p>
+                    <p className="text-xs text-[#A85D46] font-medium mt-0.5">Todo o Brasil e Exterior</p>
                   </div>
                 </div>
 

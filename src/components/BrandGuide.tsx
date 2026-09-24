@@ -82,6 +82,16 @@ const BRAND_COLORS: BrandColor[] = [
     usage: "Botões de ação (WhatsApp/Agendamento), grifos em palavras-chave, ícones, marcadores e setas de transição em carrosséis.",
   },
   {
+    name: "Argila Acessível (WCAG AA)",
+    role: "Tags Pequenas & Contraste Web",
+    hex: "#A85D46",
+    rgb: "168, 93, 70",
+    cmyk: "25, 65, 70, 15",
+    textColor: "#FFFFFF",
+    tag: "WCAG / Acessibilidade",
+    usage: "Tags pequenas, subtítulos em caixa-alta e textos finos sobre fundos claros (#F3E9E3 / #FAF4F0) para garantir contraste > 4.5:1 exigido pelo WCAG AA.",
+  },
+  {
     name: "Lavanda Acinzentada",
     role: "Secundária de Acolhimento",
     hex: "#82748E",
@@ -365,7 +375,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "logo") && (
           <section id="logo" className="space-y-8">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <Sparkle className="w-4 h-4" />
                 <span>Identidade Visual &bull; Logotipo</span>
               </div>
@@ -828,7 +838,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "colors") && (
           <section id="colors" className="space-y-10">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <Palette className="w-4 h-4" />
                 <span>Paleta Oficial &bull; Harmonia Emocional</span>
               </div>
@@ -1161,7 +1171,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "typography") && (
           <section id="typography" className="space-y-10">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <Type className="w-4 h-4" />
                 <span>Tipografia &bull; Expressão &amp; Leitura</span>
               </div>
@@ -1179,7 +1189,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
               <div className="bg-white p-6 sm:p-7 rounded-3xl border border-[#59463C]/15 shadow-xs space-y-5 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#C78169]/15 text-[#C78169]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#A85D46]/15 text-[#A85D46]">
                       Fonte de Destaques &bull; Serifada
                     </span>
                     <span className="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
@@ -1575,7 +1585,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "downloads") && (
           <section id="downloads" className="space-y-8">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <Download className="w-4 h-4" />
                 <span>Central de Arquivos &bull; Kit de Marca</span>
               </div>
@@ -1931,7 +1941,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "multichannel") && (
           <section id="multichannel" className="space-y-10">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <Video className="w-4 h-4" />
                 <span>Presença Multicanal &bull; Expansão da Marca</span>
               </div>
@@ -2325,7 +2335,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "social") && (
           <section id="social" className="space-y-10">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <Instagram className="w-4 h-4" />
                 <span>Instagram &bull; Modelos de Feed &amp; Stories</span>
               </div>
@@ -3815,7 +3825,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "slides") && (
           <section id="slides" className="space-y-8">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <Presentation className="w-4 h-4" />
                 <span>04. Apresentações &amp; Slides</span>
               </div>
@@ -3895,7 +3905,7 @@ export const BrandGuide: React.FC<BrandGuideProps> = ({ onClose }) => {
         {(activeTab === "overview" || activeTab === "voice") && (
           <section id="voice" className="space-y-8">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C78169] font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#A85D46] font-semibold">
                 <FileCheck2 className="w-4 h-4" />
                 <span>Tom de Voz &amp; Comunicação Ética</span>
               </div>
