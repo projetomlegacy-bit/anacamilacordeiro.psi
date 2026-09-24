@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -14,10 +14,13 @@ import { Testimonials } from "./components/Testimonials";
 import { Faq } from "./components/Faq";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
-import { BookingModal } from "./components/BookingModal";
-import { PrivacyModal, TermsModal } from "./components/LegalModals";
-import { AcquisitionLPs } from "./components/AcquisitionLPs";
-import { BrandGuide } from "./components/BrandGuide";
+
+// Code splitting / Lazy loading components that are not needed on initial mobile paint
+const BookingModal = lazy(() => import("./components/BookingModal").then(m => ({ default: m.BookingModal })));
+const PrivacyModal = lazy(() => import("./components/LegalModals").then(m => ({ default: m.PrivacyModal })));
+const TermsModal = lazy(() => import("./components/LegalModals").then(m => ({ default: m.TermsModal })));
+const AcquisitionLPs = lazy(() => import("./components/AcquisitionLPs").then(m => ({ default: m.AcquisitionLPs })));
+const BrandGuide = lazy(() => import("./components/BrandGuide").then(m => ({ default: m.BrandGuide })));
 
 export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -85,7 +88,11 @@ export default function App() {
 
   // If user navigated to Brand Style Guide, display the dedicated Branding Manual
   if (brandGuideOpen) {
-    return <BrandGuide onClose={handleCloseBrandGuide} />;
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-[#332A29] flex items-center justify-center text-white">Carregando Manual da Marca...</div>}>
+        <BrandGuide onClose={handleCloseBrandGuide} />
+      </Suspense>
+    );
   }
 
   return (
@@ -130,30 +137,40 @@ export default function App() {
 
       {/* Dedicated Acquisition LP overlay if navigated via URL */}
       {activeLp && (
-        <AcquisitionLPs
-          currentLpSlug={activeLp}
-          onClose={handleCloseLp}
-          onSelectLp={handleSelectLp}
-        />
+        <Suspense fallback={null}>
+          <AcquisitionLPs
+            currentLpSlug={activeLp}
+            onClose={handleCloseLp}
+            onSelectLp={handleSelectLp}
+          />
+        </Suspense>
       )}
 
       {/* Floating Action Button */}
       <WhatsAppButton />
 
       {/* Interactive Modals */}
-      <BookingModal
-        isOpen={bookingOpen}
-        onClose={() => setBookingOpen(false)}
-        initialModalidade={preferredModalidade}
-      />
-      <PrivacyModal
-        isOpen={privacyOpen}
-        onClose={() => setPrivacyOpen(false)}
-      />
-      <TermsModal
-        isOpen={termsOpen}
-        onClose={() => setTermsOpen(false)}
-      />
+      <Suspense fallback={null}>
+        {bookingOpen && (
+          <BookingModal
+            isOpen={bookingOpen}
+            onClose={() => setBookingOpen(false)}
+            initialModalidade={preferredModalidade}
+          />
+        )}
+        {privacyOpen && (
+          <PrivacyModal
+            isOpen={privacyOpen}
+            onClose={() => setPrivacyOpen(false)}
+          />
+        )}
+        {termsOpen && (
+          <TermsModal
+            isOpen={termsOpen}
+            onClose={() => setTermsOpen(false)}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }

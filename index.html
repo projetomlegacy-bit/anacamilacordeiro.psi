@@ -23,13 +23,17 @@
     <meta name="twitter:description" content="Psicoterapia para mulheres em Jundiaí e On-line. Atendimento acolhedor com foco em Ansiedade, Luto, Autoestima e Transições de Vida. Agende sua consulta." />
     <meta name="twitter:image" content="/images/psicoterapia-mulheres-jundiai-hero-desktop.webp" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Asynchronous non-render-blocking with preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" />
+    </noscript>
 
-    <!-- Performance: Preload Hero Mobile Image for LCP -->
-    <link rel="preload" as="image" href="/images/psicoterapia-mulheres-jundiai-hero-mobile.webp" type="image/webp" media="(max-width: 767px)" />
+    <!-- Performance: Preload Hero Mobile Image for LCP with fetchpriority high -->
+    <link rel="preload" as="image" href="/images/psicoterapia-mulheres-jundiai-hero-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high" />
 
     <!-- Schema.org JSON-LD Structured Data for LocalBusiness & Psychologist -->
     <script type="application/ld+json">
