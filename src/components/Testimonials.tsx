@@ -74,9 +74,11 @@ export const Testimonials: React.FC = () => {
             <div className="bg-gradient-to-br from-primary to-accent p-8 sm:p-10 rounded-3xl text-primary-foreground shadow-warm border border-accent/20">
               <div className="text-center mb-8">
                 <img
-                  src="/images/psicologa-jundiai-ana-camila-cordeiro-perfil.webp"
+                  src="/images/psicologa-jundiai-ana-camila-cordeiro-perfil-160.webp"
+                  srcSet="/images/psicologa-jundiai-ana-camila-cordeiro-perfil-160.webp 160w, /images/psicologa-jundiai-ana-camila-cordeiro-perfil.webp 350w"
+                  sizes="(max-width: 640px) 112px, 144px"
                   alt="Retrato profissional de Ana Camila Cordeiro, psicóloga clínica com orientação psicanalítica e 6 anos de experiência"
-                  className="w-36 h-36 rounded-full object-cover mx-auto mb-4 border-4 border-primary-foreground/20 shadow-lg"
+                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover mx-auto mb-4 border-4 border-primary-foreground/20 shadow-lg"
                   loading="lazy"
                   decoding="async"
                   width="144"

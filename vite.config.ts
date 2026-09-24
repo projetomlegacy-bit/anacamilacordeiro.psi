@@ -3,13 +3,22 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({mode}) => {
+  const isProd = mode === 'production' || process.env.NODE_ENV === 'production';
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(import.meta.dirname, '.'),
       },
+    },
+    define: {
+      'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
+    },
+    build: {
+      minify: 'esbuild',
+      cssMinify: true,
+      sourcemap: false,
     },
     server: {
       headers: {

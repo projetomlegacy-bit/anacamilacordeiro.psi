@@ -49,9 +49,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               alt="Psicóloga Ana Camila Cordeiro - Psicoterapia feminina em Jundiaí e on-line com foco em ansiedade e luto"
               className="w-full h-full object-cover object-top"
               fetchPriority="high"
-              decoding="async"
+              loading="eager"
+              decoding="sync"
               width="720"
-              height="1054"
+              height="1060"
             />
             {/* Smooth bottom fade into the page background */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background" />

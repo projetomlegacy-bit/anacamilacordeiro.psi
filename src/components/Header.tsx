@@ -47,8 +47,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               alt="Logotipo oficial da psicóloga Ana Camila Cordeiro - Atendimento presencial em Jundiaí e on-line"
               title="Ana Camila Cordeiro, Psicóloga Clínica"
               className="h-8 md:h-9 w-auto object-contain"
-              width="931"
-              height="160"
+              width="350"
+              height="60"
               fetchPriority="high"
             />
           </a>

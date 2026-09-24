@@ -96,7 +96,7 @@ export const About: React.FC = () => {
 
               <div className="flex items-center gap-4 pt-4 border-t border-primary-foreground/20">
                 <img
-                  src="/images/psicologa-jundiai-ana-camila-cordeiro-perfil.webp"
+                  src="/images/psicologa-jundiai-ana-camila-cordeiro-perfil-160.webp"
                   alt="Foto de perfil da psicóloga clínica Ana Camila Cordeiro (CRP 06/162019) especializada em orientação psicanalítica e luto"
                   className="w-16 h-16 rounded-full object-cover border-2 border-orange shadow-md shrink-0"
                   loading="lazy"

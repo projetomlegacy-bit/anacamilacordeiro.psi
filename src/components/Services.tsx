@@ -66,7 +66,10 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     <div className="w-12 h-12 rounded-2xl bg-accent/15 flex items-center justify-center text-accent">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="font-playfair text-3xl font-bold text-accent/30 select-none">
+                    <span
+                      className="font-playfair text-3xl font-bold text-[#7A3B28] select-none"
+                      aria-hidden="true"
+                    >
                       {item.step}
                     </span>
                   </div>
