@@ -17,8 +17,8 @@ export const About: React.FC = () => {
           {/* Left Column: Text copy from Image 2 + 3 Cards from Image 1 */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-xs uppercase tracking-wider">
-                <Heart className="w-3.5 h-3.5 text-accent" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#A85D46]/10 border border-[#A85D46]/20 text-[#A85D46] font-medium text-xs uppercase tracking-wider">
+                <Heart className="w-3.5 h-3.5 text-[#A85D46]" />
                 <span>Um convite à pausa</span>
               </div>
 
@@ -71,7 +71,7 @@ export const About: React.FC = () => {
               <a
                 href="#symptoms"
                 onClick={handleScrollToSymptoms}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-primary transition-colors cursor-pointer group"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#A85D46] hover:text-primary transition-colors cursor-pointer group"
               >
                 <span>Veja se você se reconhece em alguma dessas experiências</span>
                 <span className="group-hover:translate-y-1 transition-transform">↓</span>

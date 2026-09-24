@@ -31,6 +31,7 @@
   --color-lavanda: var(--lavanda);
   --color-oliva: var(--oliva);
   --color-argila: var(--argila);
+  --color-argila-contrast: var(--argila-contrast);
   --color-rosamarfim: var(--rosamarfim);
   --color-chocolate: var(--chocolate);
 }
@@ -45,6 +46,7 @@
   --lavanda: #82748E;
   --oliva: #7E8164;
   --argila: #C78169;
+  --argila-contrast: #A85D46;
   --rosamarfim: #F3E9E3;
   --chocolate: #332A29;
 

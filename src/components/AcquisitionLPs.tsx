@@ -215,7 +215,7 @@ export const AcquisitionLPs: React.FC<AcquisitionLPsProps> = ({
                 <span>Especialidades</span>
               </li>
               <li aria-hidden="true" className="opacity-50">/</li>
-              <li className="text-accent font-semibold" aria-current="page">
+              <li className="text-[#A85D46] font-semibold" aria-current="page">
                 {currentLp.navTitle}
               </li>
             </ol>
@@ -223,8 +223,8 @@ export const AcquisitionLPs: React.FC<AcquisitionLPsProps> = ({
 
           {/* Tag & Heading */}
           <div className="space-y-3 sm:space-y-4">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent font-medium text-[11px] sm:text-xs uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 text-accent shrink-0" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#A85D46]/10 border border-[#A85D46]/20 text-[#A85D46] font-medium text-[11px] sm:text-xs uppercase tracking-wider">
+              <Sparkles className="w-3 h-3 text-[#A85D46] shrink-0" />
               <span>Especialidade Clínica · {currentLp.navTitle}</span>
             </div>
 
@@ -305,7 +305,7 @@ export const AcquisitionLPs: React.FC<AcquisitionLPsProps> = ({
               <h3 className="font-playfair font-bold text-lg sm:text-xl text-primary">
                 Ana Camila Cordeiro
               </h3>
-              <p className="text-[11px] sm:text-xs text-accent font-semibold tracking-wide uppercase">
+              <p className="text-[11px] sm:text-xs text-[#A85D46] font-semibold tracking-wide uppercase">
                 Psicóloga Clínica · CRP 06/162019 SP · 6 anos de experiência
               </p>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pt-1">

@@ -72,12 +72,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             {/* Main Headline with Explicit SEO H1 */}
             <div className="space-y-3 sm:space-y-4">
               <h1 id="hero-title" className="space-y-1.5 sm:space-y-2">
-                <span className="block text-xs sm:text-sm font-semibold uppercase tracking-wider text-accent font-sans">
+                <span className="block text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#A85D46] font-sans">
                   Psicoterapia para Mulheres em Jundiaí e On-line
                 </span>
                 <span className="block text-3xl sm:text-4xl lg:text-6xl font-playfair font-bold text-primary leading-tight tracking-tight">
                   Um espaço para você <br className="hidden sm:inline" />
-                  <span className="text-[#C78169]">compreender</span> <br className="hidden sm:inline" />
+                  <span className="text-[#A85D46]">compreender</span> <br className="hidden sm:inline" />
                   o que está vivendo.
                 </span>
               </h1>

@@ -19,8 +19,8 @@ export const Faq: React.FC<FaqProps> = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <HelpCircle className="h-5 w-5 text-accent" />
-            <span className="text-accent font-semibold uppercase tracking-wider text-sm">
+            <HelpCircle className="h-5 w-5 text-[#A85D46]" />
+            <span className="text-[#A85D46] font-semibold uppercase tracking-wider text-sm">
               Perguntas frequentes
             </span>
           </div>
