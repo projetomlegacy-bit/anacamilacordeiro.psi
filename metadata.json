@@ -1,6 +1,6 @@
 {
-  "name": "Ana Camila Cordeiro - Psicóloga Clínica",
-  "description": "Psicoterapia para mulheres em Jundiaí e On-line. Atendimento acolhedor com foco em Ansiedade, Luto, Autoestima e Transições de Vida. Agende sua consulta.",
+  "name": "Dra. Ana Camila Cordeiro - Psicóloga Clínica",
+  "description": "Atendimento psicológico presencial em Jundiaí e on-line. Psicoterapia com orientação psicanalítica para mulheres: ansiedade, luto, autoestima e sobrecarga.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

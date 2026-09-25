@@ -3,28 +3,30 @@ import {
   Sparkles,
   Wind,
   Feather,
-  CloudRain,
+  Heart,
   Scale,
   Compass,
   X,
   ArrowRight,
   CheckCircle2,
   LucideIcon,
+  Flower2,
 } from "lucide-react";
 import { DEMANDS_DATA, Demand, getWhatsAppUrl } from "../data/content";
+import { trackWhatsAppConversion } from "../utils/analytics";
 
 interface SymptomsProps {
   onOpenBooking?: () => void;
 }
 
-// Minimalist line-art icons mapped in institutional color #C78169
+// Minimalist, lightweight line-art icons mapped in harmonious tones
 const DEMAND_ICONS: Record<string, LucideIcon> = {
   ansiedade: Wind,
-  luto: Feather,
-  autoestima: Sparkles,
-  depressao: CloudRain,
+  autoestima: Heart,
+  relacionamentos: Compass,
   sobrecarga: Scale,
-  transicoes: Compass,
+  luto: Feather,
+  autoconhecimento: Flower2,
 };
 
 export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
@@ -41,22 +43,22 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
         <div className="text-center mb-16 max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7A3B28]/10 border border-[#7A3B28]/20 text-[#7A3B28] font-semibold text-xs uppercase tracking-wider">
             <Sparkles className="h-3.5 w-3.5 text-[#7A3B28]" />
-            <span>Você está passando por isso?</span>
+            <span>Processo Terapêutico</span>
           </div>
 
           <h2
             id="symptoms-title"
             className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-primary leading-tight"
           >
-            Algumas coisas podem estar pesando mais do que você gostaria.
+            O que podemos olhar juntas na psicoterapia?
           </h2>
 
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Cada vivência é única. Na psicoterapia, olhamos para a sua experiência real, sem rótulos ou fórmulas prontas.
+            Na psicoterapia, podemos olhar juntas para as questões que têm causado sofrimento, se repetido ou despertado o desejo de compreender melhor a si mesma e a sua própria história.
           </p>
         </div>
 
-        {/* 6 Human Experience Cards in Symmetrical 3x2 Grid with rgba(199, 129, 105, 0.15) border and ~20% larger icons */}
+        {/* 6 Experience Cards in Symmetrical 3x2 Grid with Light Minimalist Aesthetics */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {DEMANDS_DATA.map((item) => {
             const Icon = DEMAND_ICONS[item.id] || Sparkles;
@@ -65,18 +67,17 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
               <button
                 key={item.id}
                 onClick={() => setSelectedDemand(item)}
-                style={{ borderColor: "rgba(199, 129, 105, 0.20)" }}
-                className="group bg-[#FAF4F0] p-7 sm:p-8 rounded-3xl shadow-soft border hover:border-[#C78169]/40 hover:shadow-warm transition-all duration-300 hover:-translate-y-2 cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#C78169]/30 flex flex-col justify-between"
+                className="group bg-card/90 hover:bg-card p-7 sm:p-8 rounded-3xl shadow-soft border border-border/50 hover:border-accent/40 hover:shadow-warm transition-all duration-300 hover:-translate-y-1.5 cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-accent/30 flex flex-col justify-between"
                 aria-label={`Ver detalhes sobre ${item.title}`}
               >
                 <div className="space-y-4">
-                  {/* Top Bar with ~20% Larger Line-art Icon in institutional #C78169 */}
+                  {/* Top Bar with Delicate Minimalist Icon */}
                   <div className="flex items-center justify-between">
-                    <div className="w-14 h-14 rounded-2xl bg-[#C78169]/10 text-[#C78169] flex items-center justify-center transition-all duration-300 group-hover:bg-[#C78169]/20 group-hover:scale-105">
-                      <Icon className="w-7 h-7 sm:w-7.5 sm:h-7.5 stroke-[1.6]" />
+                    <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-105">
+                      <Icon className="w-6 h-6 stroke-[1.4]" />
                     </div>
                     <span className="text-xs font-semibold text-[#7A3B28] tracking-wider uppercase">
-                      Experiência
+                      Psicoterapia
                     </span>
                   </div>
 
@@ -84,21 +85,17 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                     {item.title}
                   </h3>
 
-                  <p className="text-foreground/90 font-medium text-sm sm:text-base leading-snug italic">
-                    "{item.experienceHeadline}"
-                  </p>
-
-                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed pt-1">
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                     {item.shortDesc}
                   </p>
                 </div>
 
                 <div className="pt-6">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-[#7A3B28] group-hover:text-primary transition-colors">
-                    <span>Entender como a terapia ajuda</span>
+                    <span>Compreender este acolhimento</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
-                  <div className="h-0.5 bg-[#C78169]/40 rounded-full mt-4 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <div className="h-0.5 bg-accent/30 rounded-full mt-4 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </div>
               </button>
             );
@@ -107,19 +104,17 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
 
         {/* Reassurance Callout Box */}
         <div className="text-center mt-16">
-          <div
-            style={{ borderColor: "rgba(199, 129, 105, 0.20)" }}
-            className="bg-[#FAF4F0] p-8 sm:p-10 rounded-3xl max-w-4xl mx-auto shadow-soft border"
-          >
+          <div className="bg-[#FAF4F0] p-8 sm:p-10 rounded-3xl max-w-4xl mx-auto shadow-soft border border-border/60">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Se você se reconhece em alguma dessas vivências, saiba que{" "}
-              <span className="text-primary font-semibold">não precisa carregar tudo sozinha</span>. A psicoterapia é um primeiro passo para respirar, ser ouvida e se reencontrar.
+              Você não precisa esperar uma dor se tornar insuportável para buscar ajuda. A psicoterapia é um espaço seguro para{" "}
+              <span className="text-primary font-semibold">compreender o que você está vivendo</span> e resgatar a sua tranquilidade.
             </p>
             <div className="mt-6">
               <a
-                href={getWhatsAppUrl("Olá, Ana Camila! Estava lendo sobre as vivências no seu site e gostaria de conversar sobre atendimento psicoterapêutico.")}
+                href={getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar com você sobre atendimento psicológico.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppConversion("Vivências / Sintomas - Falar com a Psicóloga")}
                 className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm px-7 py-3 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all"
               >
                 <span>Falar com a Psicóloga</span>
@@ -140,14 +135,14 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
           aria-labelledby="modal-title"
         >
           <div
-            className="bg-[#FAF4F0] w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-warm space-y-6 animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto border border-[#C78169]/20"
+            className="bg-card w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-warm space-y-6 animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto border border-border"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3.5">
-                <div className="w-14 h-14 rounded-2xl bg-[#C78169]/15 text-[#C78169] flex items-center justify-center shrink-0">
-                  <SelectedIcon className="w-7 h-7 stroke-[1.6]" />
+                <div className="w-13 h-13 rounded-2xl bg-accent/15 text-accent flex items-center justify-center shrink-0">
+                  <SelectedIcon className="w-6.5 h-6.5 stroke-[1.4]" />
                 </div>
                 <div>
                   <h3 id="modal-title" className="text-2xl font-playfair font-bold text-primary">
@@ -181,7 +176,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
             {selectedDemand.signs && selectedDemand.signs.length > 0 && (
               <div className="space-y-3 pt-1">
                 <div className="text-xs font-semibold uppercase tracking-wider text-primary">
-                  Sinais e sensações comuns:
+                  Aspectos e reflexões comuns:
                 </div>
                 <div className="space-y-2">
                   {selectedDemand.signs.map((sign, idx) => (
@@ -200,6 +195,7 @@ export const Symptoms: React.FC<SymptomsProps> = ({ onOpenBooking }) => {
                 href={selectedDemand.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppConversion(`Vivências Modal - Conversar sobre ${selectedDemand.title}`)}
                 className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm h-11 px-5 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 transition-all"
               >
                 <span>Conversar sobre {selectedDemand.title}</span>

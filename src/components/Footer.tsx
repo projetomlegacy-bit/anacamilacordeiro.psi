@@ -8,6 +8,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { CONTACT_PHONE, getWhatsAppUrl, DEMANDS_DATA } from "../data/content";
+import { trackWhatsAppConversion } from "../utils/analytics";
 
 interface FooterProps {
   onOpenPrivacy: () => void;
@@ -71,6 +72,7 @@ export const Footer: React.FC<FooterProps> = ({
                   href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppConversion("Footer (Desktop) - WhatsApp Icon")}
                   aria-label="WhatsApp da psicóloga Ana Camila Cordeiro"
                   className="w-10 h-10 bg-accent/30 rounded-full flex items-center justify-center hover:bg-accent/50 text-[#FAF4F0] transition-all duration-200"
                 >
@@ -151,6 +153,7 @@ export const Footer: React.FC<FooterProps> = ({
                   href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppConversion("Footer (Mobile) - WhatsApp Icon")}
                   aria-label="WhatsApp"
                   className="w-9 h-9 bg-accent/30 rounded-full flex items-center justify-center hover:bg-accent/50 text-[#FAF4F0] transition-colors"
                 >

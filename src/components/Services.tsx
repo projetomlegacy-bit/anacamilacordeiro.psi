@@ -1,6 +1,7 @@
 import React from "react";
 import { Sparkles, MapPin, Video, MessageCircle, CalendarCheck, Compass } from "lucide-react";
 import { getWhatsAppUrl } from "../data/content";
+import { trackWhatsAppConversion } from "../utils/analytics";
 
 interface ServicesProps {
   onOpenBooking?: (modalidade: "presencial" | "online") => void;
@@ -10,20 +11,20 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
   const steps = [
     {
       step: "01",
-      title: "Primeiro Contato",
-      desc: "Você me envia uma mensagem no WhatsApp. Conversamos brevemente para tirar dúvidas, alinhar o formato e verificar horários disponíveis.",
+      title: "Primeiro contato",
+      desc: "Entre em contato comigo para verificar disponibilidade, modalidade de atendimento e esclarecer dúvidas práticas antes de agendarmos o primeiro encontro.",
       icon: MessageCircle,
     },
     {
       step: "02",
-      title: "Primeira Sessão",
-      desc: "Nosso primeiro encontro. Um momento dedicado a escutar o que te motivou a buscar ajuda, suas angústias e entender o seu momento de vida.",
+      title: "Primeiros encontros",
+      desc: "Esse é o momento de compreender o que motivou sua busca pela psicoterapia e como as situações que te atravessam têm ocupado espaço na sua vida.",
       icon: CalendarCheck,
     },
     {
       step: "03",
-      title: "Continuidade do Processo",
-      desc: "Sessões semanais de 50 minutos, no seu ritmo, construindo um espaço contínuo de autocompreensão, elaboração psíquica e alívio.",
+      title: "Ao longo do percurso",
+      desc: "O trabalho vai sendo construído ao longo do tempo, a partir do que é trazido nas sessões, vamos desatando os nós e dando lugar às questões que precisam ser compreendidas e elaboradas.",
       icon: Compass,
     },
   ];
@@ -36,7 +37,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
           <div className="flex items-center justify-center gap-2 mb-2">
             <Sparkles className="h-5 w-5 text-[#7A3B28]" />
             <span className="text-[#7A3B28] font-semibold uppercase tracking-wider text-sm">
-              COMO FUNCIONA O ATENDIMENTO
+              PRIMEIROS PASSOS
             </span>
           </div>
 
@@ -44,11 +45,11 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
             id="services-title"
             className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-primary leading-tight"
           >
-            O Caminho para Iniciar seu Processo
+            Como começa a psicoterapia
           </h2>
 
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Dar o primeiro passo não precisa ser burocrático ou solitário. Veja como organizamos as etapas e os formatos de atendimento.
+            Cada processo é único, mas entender como os primeiros passos acontecem pode tornar esse início mais tranquilo.
           </p>
         </div>
 
@@ -146,6 +147,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                   href={getWhatsAppUrl("Olá Ana, vim do seu site e gostaria de agendar uma Consulta Presencial em Jundiaí.")}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppConversion("Serviços - Consulta Presencial (Jundiaí)")}
                   className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 font-semibold h-11 px-6"
                 >
                   Agendar Consulta Presencial
@@ -203,6 +205,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                   href={getWhatsAppUrl("Olá Ana, vim do seu site e gostaria de agendar uma Consulta On-line.")}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppConversion("Serviços - Consulta On-line")}
                   className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 font-semibold h-11 px-6"
                 >
                   Agendar Consulta On-line

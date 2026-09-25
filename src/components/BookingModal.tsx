@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X, Send, MapPin, Monitor, CheckCircle, Clock, ShieldCheck, MessageCircle } from "lucide-react";
 import { getWhatsAppUrl } from "../data/content";
+import { trackWhatsAppConversion } from "../utils/analytics";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -19,6 +20,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [periodo, setPeriodo] = useState("manha");
   const [motivo, setMotivo] = useState("Ansiedade");
   const [mensagem, setMensagem] = useState("");
+  const [lgpdConsent, setLgpdConsent] = useState(true);
   const [enviado, setEnviado] = useState(false);
   const [lastWhatsAppUrl, setLastWhatsAppUrl] = useState("");
 
@@ -35,6 +37,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
     const url = getWhatsAppUrl(texto);
     setLastWhatsAppUrl(url);
+
+    // Track conversion event for lead form submission
+    trackWhatsAppConversion(`Modal Agendamento - ${modalidade === "presencial" ? "Presencial" : "On-line"} (${motivo})`);
 
     // Open safely via secure anchor with rel="noopener noreferrer"
     const link = document.createElement("a");
@@ -93,6 +98,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 href={lastWhatsAppUrl || getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppConversion("Modal Agendamento - Botão Abrir WhatsApp")}
                 className="inline-flex items-center justify-center gap-2 gradient-orange text-orange-foreground font-semibold px-6 py-2.5 rounded-lg text-sm shadow-warm hover:brightness-110 transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -248,6 +254,19 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <strong className="text-foreground font-semibold">Segurança &amp; LGPD:</strong> Seus dados não são armazenados em nenhum banco de dados ou servidor. O formulário apenas direciona você ao WhatsApp oficial da psicóloga com criptografia ponta a ponta.
               </p>
             </div>
+
+            <label className="flex items-start gap-2.5 cursor-pointer text-xs text-muted-foreground select-none">
+              <input
+                type="checkbox"
+                required
+                checked={lgpdConsent}
+                onChange={(e) => setLgpdConsent(e.target.checked)}
+                className="mt-0.5 rounded border-border text-accent focus:ring-accent w-4 h-4 cursor-pointer"
+              />
+              <span>
+                Concordo com o envio das minhas informações para fins exclusivos de agendamento, em conformidade com a <strong className="text-foreground font-medium">LGPD</strong> e o sigilo ético do CFP.
+              </span>
+            </label>
 
             <div className="pt-2">
               <button

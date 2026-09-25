@@ -14,6 +14,7 @@ import { Testimonials } from "./components/Testimonials";
 import { Faq } from "./components/Faq";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { CookieBanner } from "./components/CookieBanner";
 
 // Code splitting / Lazy loading components that are not needed on initial mobile paint
 const BookingModal = lazy(() => import("./components/BookingModal").then(m => ({ default: m.BookingModal })));
@@ -148,6 +149,9 @@ export default function App() {
 
       {/* Floating Action Button */}
       <WhatsAppButton />
+
+      {/* LGPD Cookie Consent Banner */}
+      <CookieBanner onOpenPrivacy={() => setPrivacyOpen(true)} />
 
       {/* Interactive Modals */}
       <Suspense fallback={null}>

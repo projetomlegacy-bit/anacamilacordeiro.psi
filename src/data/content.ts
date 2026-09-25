@@ -56,90 +56,90 @@ export const DEMANDS_DATA: Demand[] = [
     id: "ansiedade",
     emoji: "🌿",
     title: "Ansiedade",
-    experienceHeadline: "Quando a mente não desacelera, a preocupação ocupa espaço demais e fica difícil simplesmente estar presente.",
-    shortDesc: "Pensamentos acelerados, sensação de aperto no peito e a sensação constante de que algo vai dar errado.",
-    fullDesc: "A ansiedade se torna pesada quando rouba sua presença e te faz viver no futuro, antecipando problemas e cobrando de si um controle que ninguém pode ter. Na psicoterapia, abrimos um espaço para acolher essas angústias, compreender de onde elas vêm e construir formas mais gentis e possíveis de viver o dia a dia.",
+    experienceHeadline: "Quando a mente não desacelera e a preocupação ocupa espaço demais no seu dia a dia.",
+    shortDesc: "Compreender como a ansiedade aparece na sua vida e o que pode estar relacionado ao que você sente.",
+    fullDesc: "Compreender como a ansiedade aparece na sua vida, no corpo e nas suas escolhas. Na psicoterapia com orientação psicanalítica, investigamos o que pode estar por trás desse estado de alerta constante, criando um espaço seguro para desacelerar, nomear angústias e construir novas formas de viver.",
     whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para momentos de ansiedade."),
     signs: [
+      "Sensação contínua de pressa ou urgência, mesmo quando não há nada urgente",
+      "Sintomas físicos: aperto no peito, respiração curta ou tensão constante",
       "Dificuldade de desacelerar os pensamentos antes de dormir ou ao acordar",
-      "Sintomas no corpo: aperto no peito, respiração curta ou tensão muscular constante",
-      "Medo contínuo de errar, desagradar ou perder o controle",
-      "Sensação de urgência permanente, como se sempre houvesse algo pendente"
-    ]
-  },
-  {
-    id: "luto",
-    emoji: "🕊️",
-    title: "Luto e Perdas",
-    experienceHeadline: "Quando uma perda muda sua rotina, seus vínculos ou a forma como você enxergava a própria vida.",
-    shortDesc: "A dor de uma ausência significativa, o fim de um relacionamento ou uma ruptura profunda na sua história.",
-    fullDesc: "Nem toda perda envolve a morte. Fim de ciclos, término de relações, mudanças bruscas e sonhos interrompidos também demandam luto. Dedico parte significativa da minha formação e prática a compreender as singularidades desses processos, oferecendo um acolhimento respeitoso ao seu ritmo, sem pressa para que você 'supere'.",
-    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre acolhimento e psicoterapia para perdas e luto."),
-    signs: [
-      "Sensação de vazio ou desestruturação após uma ruptura ou perda",
-      "Dificuldade em assimilar o fim de um ciclo ou a ausência de alguém",
-      "Oscilações entre tristeza profunda, anestesia e momentos de angústia",
-      "A sensação de que o mundo seguiu em frente, mas algo em você parou"
+      "Medo frequente de errar, desagradar ou perder o controle"
     ]
   },
   {
     id: "autoestima",
     emoji: "🪞",
-    title: "Autoestima e Autocuidado",
-    experienceHeadline: "Quando você se cobra demais, se coloca sempre por último ou sente dificuldade em reconhecer suas próprias necessidades.",
-    shortDesc: "Insegurança persistente, comparação silenciosa com os outros e a sensação de nunca ser o bastante.",
-    fullDesc: "Muitas mulheres aprenderam a cuidar de todos ao seu redor antes de olhar para si mesmas. Isso gera um cansaço silencioso e uma autocrítica dura. A terapia é o seu momento de pausar, reconstruir o vínculo com a sua história e reconhecer o seu valor sem precisar provar nada a ninguém.",
-    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para questões de autoestima e autocuidado."),
+    title: "Autoestima e Relação Consigo",
+    experienceHeadline: "Quando você se cobra além da conta e percebe que quase sempre deixa a si mesma por último.",
+    shortDesc: "Olhar para a forma como você se percebe, se cobra e se relaciona com suas próprias necessidades.",
+    fullDesc: "Olhar para a forma como você se percebe, se cobra e se relaciona com suas próprias necessidades. Um processo para silenciar a autocrítica excessiva, desconstruir padrões de exigência e resgatar uma conexão genuína e generosa com quem você é.",
+    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para autoestima e relação comigo mesma."),
     signs: [
-      "Sensação de que o que você faz nunca é suficiente",
-      "Dificuldade em dizer 'não' por medo de rejeição ou culpa",
-      "Hábito de se comparar com os outros e se diminuir silenciosamente",
-      "Dificuldade de ter momentos de descanso genuíno sem sentir culpa"
+      "Sensação persistente de que o que você faz nunca é o bastante",
+      "Dificuldade em dizer 'não' e receio constante de decepcionar os outros",
+      "Hábito de se comparar e desvalorizar as próprias conquistas",
+      "Sentimento de culpa ao tentar descansar ou reservar tempo para si"
     ]
   },
   {
-    id: "depressao",
-    emoji: "🌧️",
-    title: "Depressão",
-    experienceHeadline: "Quando o desânimo, a tristeza ou a falta de energia começam a interferir naquilo que antes fazia parte do seu cotidiano.",
-    shortDesc: "Sensação prolongada de vazio, perda do prazer nas coisas simples e sensação de peso no corpo.",
-    fullDesc: "Diferente de uma tristeza passageira, a depressão afeta a vitalidade e a perspectiva de futuro. Na psicoterapia de orientação psicanalítica, criamos um espaço seguro para escutar essa dor sem julgamentos, entendendo o sentido do que você está sentindo e reconstruindo aos poucos a sua relação com a vida.",
-    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para momentos de desânimo e depressão."),
+    id: "relacionamentos",
+    emoji: "🧭",
+    title: "Relacionamentos e Vínculos",
+    experienceHeadline: "Quando determinadas situações e conflitos parecem se repetir nas suas relações afetivas, familiares ou sociais.",
+    shortDesc: "Perceber conflitos, padrões e repetições que atravessam suas relações familiares, amorosas e sociais.",
+    fullDesc: "Perceber conflitos, padrões e repetições que atravessam suas relações familiares, amorosas e sociais. A psicoterapia oferece um espaço para refletir sobre seu posicionamento diante dos outros, colocar limites saudáveis e construir vínculos mais maduros e autênticos.",
+    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para relacionamentos e vínculos."),
     signs: [
-      "Perda de interesse ou prazer por atividades que antes traziam sentido",
-      "Sensação constante de cansaço que não passa após o sono",
-      "Sentimentos de culpa, desesperança ou isolamento involuntário",
-      "Dificuldade para encontrar motivação nas tarefas diárias"
+      "Padrões de conflito ou distanciamento que se repetem em diferentes vínculos",
+      "Dificuldade em expressar incômodos e colocar limites necessários",
+      "Medo de rejeição ou abandono que compromete a sua autonomia",
+      "Sensação de assumir responsabilidade pelo bem-estar de todos ao redor"
     ]
   },
   {
     id: "sobrecarga",
     emoji: "⚖️",
-    title: "Burnout e Sobrecarga",
-    experienceHeadline: "Quando a necessidade de dar conta de tudo começa a cobrar um preço emocional.",
-    shortDesc: "Exaustão mental e física pelo acúmulo de papéis, responsabilidades e exigências diárias.",
-    fullDesc: "Carregar o peso de ser forte o tempo todo e tentar abraçar todas as demandas da família, do trabalho e da vida pessoal esgota qualquer pessoa. A psicoterapia oferece um espaço para desacelerar, nomear os seus limites e encontrar formas mais sustentáveis e humanas de viver.",
-    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para sobrecarga emocional e burnout."),
+    title: "Sobrecarga Emocional",
+    experienceHeadline: "Quando a tentativa de dar conta de tudo cobra um preço alto da sua saúde e disposição.",
+    shortDesc: "Reconhecer seus limites e compreender porque cuidar de si, descansar ou não dar conta de tudo pode ser tão difícil.",
+    fullDesc: "Reconhecer seus limites e compreender porque cuidar de si, descansar ou não dar conta de tudo pode ser tão difícil. Na psicoterapia, criamos um espaço protegido para desarmar a pressão de ser forte o tempo todo e construir uma rotina mais possível e humana.",
+    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para sobrecarga emocional."),
     signs: [
-      "Sensação de estar no limite físico e emocional todos os dias",
-      "Irritabilidade involuntária, esquecimentos e dificuldade de foco",
-      "Falta de tempo para si mesma e sensação de viver apenas para resolver urgências",
-      "Corpo manifestando sinais de estresse: dores de cabeça, insônia ou tensão constante"
+      "Sensação de estar no limite físico e mental todos os dias",
+      "Cansaço profundo que não desaparece mesmo após momentos de descanso",
+      "Irritabilidade involuntária, esquecimentos e perda de foco",
+      "Dificuldade de delegar tarefas por medo de que nada saia perfeito"
     ]
   },
   {
-    id: "transicoes",
-    emoji: "🧭",
-    title: "Transições de Vida & Relacionamentos",
-    experienceHeadline: "Quando novas fases, términos ou mudanças nos vínculos despertam inseguranças e pedem reorganização interna.",
-    shortDesc: "Términos afetivos, mudanças de carreira, novas fases da vida e a necessidade de se reencontrar.",
-    fullDesc: "Mudanças significativas nos vínculos e nos ciclos de vida — sejam términos de relacionamento, novos desafios profissionais ou transformações familiares — colocam nossas certezas em suspensão. Na psicoterapia, você encontra um espaço para elaborar o que ficou para trás, reconhecer seus sentimentos e resgatar sua autonomia para construir novos caminhos com serenidade.",
-    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento para transições de vida e relacionamentos."),
+    id: "luto",
+    emoji: "🕊️",
+    title: "Lutos e Perdas",
+    experienceHeadline: "Quando uma perda significativa ou o encerramento de um ciclo mudou a forma como você olha para a vida.",
+    shortDesc: "Encontrar espaço para identificar, falar e elaborar uma perda e as mudanças e significados que ela trouxe para sua vida.",
+    fullDesc: "Encontrar espaço para identificar, falar e elaborar uma perda e as mudanças e significados que ela trouxe para sua vida. Nem toda perda envolve a morte: términos de relacionamento, mudanças bruscas e rupturas de sonhos também demandam luto e escuta singular, sem pressa para 'superar'.",
+    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre acolhimento para momentos de luto e perdas."),
     signs: [
-      "Dificuldade em assimilar o fim de um relacionamento ou uma mudança de fase",
-      "Insegurança para tomar decisões ou lidar com o medo do desconhecido",
-      "Sensação de perda de identidade ao assumir novos papéis e responsabilidades",
-      "Conflitos recorrentes nos vínculos e dificuldade em estabelecer limites saudáveis"
+      "Sensação de vazio ou desestruturação após uma ruptura ou ausência",
+      "Dificuldade de assimilar o fim de uma fase ou vínculo significativo",
+      "Sensação de que o mundo seguiu em frente, mas algo em você ainda precisa de tempo",
+      "Oscilações entre tristeza profunda, angústia e anestesia emocional"
+    ]
+  },
+  {
+    id: "autoconhecimento",
+    emoji: "🌱",
+    title: "Autoconhecimento",
+    experienceHeadline: "Quando você sente que algo não está bem ou deseja se aproximar daquilo que você realmente sente e deseja.",
+    shortDesc: "Aproximar-se dos seus sentimentos, desejos, escolhas e daquilo que talvez não seja tão claro sobre si mesma.",
+    fullDesc: "Aproximar-se dos seus sentimentos, desejos, escolhas e daquilo que talvez não seja tão claro sobre si mesma. Na escuta de orientação psicanalítica, você encontra um lugar seguro para falar livremente, compreender suas contradições e se apropriar com serenidade da sua própria história.",
+    whatsappUrl: getWhatsAppUrl("Olá, Ana Camila! Gostaria de conversar sobre atendimento psicoterapêutico e autoconhecimento."),
+    signs: [
+      "Desejo de compreender suas motivações, escolhas e sentimentos mais profundos",
+      "Sensação de que você vive no 'piloto automático' e precisa de uma pausa real",
+      "Sensação difusa de que algo não vai bem, mesmo sem saber explicar exatamente o quê",
+      "Vontade de construir novos caminhos com mais clareza, autonomia e sentido"
     ]
   }
 ];
@@ -149,38 +149,33 @@ export const SYMPTOMS_DATA = DEMANDS_DATA;
 export const FAQ_DATA: FaqItem[] = [
   {
     id: "faq-1",
-    question: "Nunca fiz terapia. Como funciona?",
-    answer: "A terapia é um espaço seguro, confidencial e sem julgamentos, onde você pode falar abertamente sobre o que está sentindo e vivendo. Você não precisa ter experiência prévia nem seguir um roteiro pré-determinado: o processo se constrói no diálogo, no seu próprio tempo e com todo o respeito à sua história."
+    question: "Quando devo iniciar a psicoterapia?",
+    answer: "Você pode iniciar a psicoterapia quando perceber que algo tem causado sofrimento, se repetido ou despertado em você o desejo de compreender melhor o que está vivendo. Nem sempre é preciso chegar com a questão bem definida ou esperar que o incômodo se torne intenso. Às vezes, perceber que algo não está bem já pode ser um ponto de partida."
   },
   {
     id: "faq-2",
-    question: "Preciso saber exatamente o que está acontecendo comigo?",
-    answer: "Não. Muitas mulheres chegam à terapia apenas com uma sensação difusa de incômodo, cansaço ou a percepção de que 'algo não está bem'. Parte fundamental do processo terapêutico é justamente colocar em palavras aquilo que você está vivendo e ir compreendendo, passo a passo, o que está acontecendo."
+    question: "Qual a frequência e duração das sessões?",
+    answer: "As sessões são semanais e têm duração de 50 minutos. A regularidade dos encontros é primordial para estabelecer o vínculo, favorece a continuidade do processo psicoterapêutico e sustenta o trabalho que vai sendo construído ao longo das sessões."
   },
   {
     id: "faq-3",
-    question: "E se eu não souber o que falar?",
-    answer: "Isso é absolutamente comum e natural. Você não precisa preparar um discurso nem se preocupar com pausas ou silêncios. Como psicóloga, estou aqui para acolher o seu ritmo e guiar a conversa com perguntas cuidadosas, ajudando você a se sentir confortável e ouvida desde o início."
+    question: "Quais questões você atende?",
+    answer: "Atendo mulheres adultas que estejam vivenciando questões relacionadas à ansiedade, autoestima, autocobrança, sobrecarga emocional, dificuldades nos relacionamentos e vínculos, luto e diferentes experiências de perda."
   },
   {
     id: "faq-4",
-    question: "Posso fazer terapia on-line?",
-    answer: "Sim! Os atendimentos on-line ocorrem por meio de videochamadas seguras e sigilosas, em ambiente criptografado, para mulheres de qualquer cidade do Brasil ou residentes no exterior. A eficácia e o vínculo do processo on-line são amplamente reconhecidos pelo Conselho Federal de Psicologia e trazem a comodidade do seu próprio espaço."
+    question: "Como funciona a psicoterapia on-line?",
+    answer: "As sessões acontecem por videochamada, em ambiente reservado e com respeito ao sigilo profissional. Você pode realizá-las de onde estiver, desde que tenha privacidade e condições para conversar com tranquilidade e sem interrupções. O processo mantém a mesma seriedade e compromisso ético do atendimento presencial."
   },
   {
     id: "faq-5",
-    question: "Como funciona a primeira sessão?",
-    answer: "A primeira sessão é um primeiro encontro de acolhimento. É o momento de você compartilhar o que te motivou a buscar ajuda, tirar dúvidas sobre o atendimento e conhecer a forma de trabalho. A partir dessa conversa, avaliamos juntas a continuidade do processo terapêutico."
+    question: "Como faço para marcar minha primeira sessão?",
+    answer: "Para começar, basta entrar em contato pelo botão 'Agendar Consulta' ou no ícone do WhatsApp. A partir daí, alinhamos a modalidade de atendimento (presencial em Jundiaí ou on-line), os horários disponíveis e tudo o que você precisa saber antes do primeiro encontro."
   },
   {
     id: "faq-6",
-    question: "Como saber se a terapia é para mim?",
-    answer: "Se você percebe que está se cobrando além da conta, sentindo um peso difícil de carregar sozinha, lidando com perdas, ansiedade ou apenas deseja um espaço de escuta profunda para compreender melhor a si mesma, a psicoterapia é para você. Não é preciso esperar a situação se tornar insuportável para se permitir cuidar de si."
-  },
-  {
-    id: "faq-7",
-    question: "Como funciona o agendamento?",
-    answer: "O primeiro passo é simples e sem burocracia: basta me enviar uma mensagem pelo WhatsApp. Conversaremos brevemente para entender sua disponibilidade, tirar qualquer dúvida e agendar o melhor dia e horário para o nosso primeiro encontro, seja presencial em Jundiaí/SP ou on-line."
+    question: "Você aceita planos de saúde ou convênios?",
+    answer: "Os atendimentos são realizados de forma particular, sem vínculo direto com planos de saúde ou convênios. No primeiro contato, você poderá tirar suas dúvidas sobre valores, recibo para solicitação de reembolso junto ao seu convênio, formas de pagamento e demais informações do atendimento."
   }
 ];
 
@@ -313,23 +308,43 @@ export const ACQUISITION_LPS: AcquisitionLP[] = [
     ctaButtonText: "Quero cuidar da minha sobrecarga"
   },
   {
-    id: "transicoes",
-    slug: "transicoes",
-    navTitle: "Transições & Relacionamentos",
-    seoTitle: "Psicóloga para Transições de Vida e Relacionamentos | Jundiaí & On-line",
-    seoDescription: "Psicoterapia para mudanças de fase, términos, transições de carreira e reconstrução de vínculos afetivos. Atendimento em Jundiaí e on-line. Agende sua consulta.",
-    headline: "Quando os caminhos mudam e pedem uma nova forma de se posicionar.",
-    subheadline: "Apoio psicoterapêutico para atravessar mudanças de fase, términos, transições de carreira e reconstrução de vínculos com serenidade.",
-    introText: "Fins de relacionamento, mudanças profissionais, chegada da maternidade ou o fechamento de ciclos importantes colocam nossas antigas certezas à prova. É natural sentir medo, confusão e hesitação. A psicoterapia oferece o solo firme necessário para elaborar o que ficou para trás e dar novos passos com clareza e autonomia.",
-    signsTitle: "Como as transições costumam repercutir no dia a dia:",
+    id: "relacionamentos",
+    slug: "relacionamentos",
+    navTitle: "Relacionamentos e Vínculos",
+    seoTitle: "Psicóloga para Relacionamentos e Vínculos em Jundiaí & On-line | Ana Camila Cordeiro",
+    seoDescription: "Psicoterapia para padrões de repetição nos relacionamentos, conflitos e limites afetivos com a psicóloga Ana Camila Cordeiro em Jundiaí e on-line.",
+    headline: "Quando as relações despertam angústias e pedem novos posicionamentos.",
+    subheadline: "Apoio psicoterapêutico para reconhecer padrões repetitivos, colocar limites saudáveis e construir vínculos mais autênticos e equilibrados.",
+    introText: "A forma como nos relacionamos com as outras pessoas muitas vezes reflete histórias, medos e cobranças construídas ao longo de anos. Na psicoterapia de orientação psicanalítica, criamos um espaço seguro para compreender o que se repete nos seus vínculos e resgatar a sua autonomia e voz.",
+    signsTitle: "Como as questões relacionais costumam se manifestar:",
     signs: [
-      "Sensação de desorientação diante do término de um ciclo ou relação importante",
-      "Dificuldade de saber quem você é agora que as circunstâncias mudaram",
-      "Conflitos recorrentes nos vínculos afetivos e medo de estabelecer limites",
-      "Insegurança paralisante na hora de fazer escolhas ou começar de novo"
+      "Sensação de assumir a responsabilidade pelo humor e bem-estar do outro",
+      "Medo de desagradar, dizer 'não' ou expressar incômodos necessários",
+      "Percepção de que determinados conflitos e escolhas insistem em se repetir",
+      "Dificuldade de saber onde terminam as expectativas do outro e começam as suas"
     ],
-    approachText: "Com fundamentação psicanalítica, acolhemos as contradições naturais de qualquer mudança. Ajudamos você a nomear seus verdadeiros sentimentos e a construir vínculos mais maduros e autênticos consigo mesma e com os outros.",
-    whatsappMessage: "Olá, Ana Camila! Vim pela página de Transições e Relacionamentos e gostaria de conversar sobre atendimento psicológico.",
-    ctaButtonText: "Quero apoio para esta nova fase"
+    approachText: "Com fundamentação psicanalítica, olhamos para a sua singularidade nos relacionamentos, ajudando você a se posicionar com firmeza e afeto diante da própria vida.",
+    whatsappMessage: "Olá, Ana Camila! Vim pela página de Relacionamentos e Vínculos e gostaria de conversar sobre atendimento psicológico.",
+    ctaButtonText: "Quero conversar sobre meus relacionamentos"
+  },
+  {
+    id: "autoconhecimento",
+    slug: "autoconhecimento",
+    navTitle: "Autoconhecimento",
+    seoTitle: "Psicoterapia e Autoconhecimento Feminino em Jundiaí & On-line | Ana Camila Cordeiro",
+    seoDescription: "Espaço de escuta profunda para autocompreensão, desejos e sentidos de vida com a psicóloga clínica Ana Camila Cordeiro em Jundiaí e on-line.",
+    headline: "Aproximar-se do que você realmente sente, deseja e precisa.",
+    subheadline: "Um espaço seguro para desacelerar o piloto automático, escutar a si mesma e construir caminhos com mais clareza e sentido.",
+    introText: "Muitas vezes, a rotina e as expectativas externas nos afastam do que realmente importa para nós. O autoconhecimento na psicoterapia não é sobre buscar respostas prontas, mas sobre ter um espaço de escuta profunda para compreender sua própria história e fazer escolhas mais conscientes.",
+    signsTitle: "Sinais de que você busca mais conexão consigo mesma:",
+    signs: [
+      "Sensação de viver no piloto automático e não encontrar tempo para se escutar",
+      "Desejo de entender suas contradições, medos e verdadeiras motivações",
+      "Percepção de que algo não está bem, mesmo sem saber explicar exatamente o quê",
+      "Vontade de construir escolhas mais alinhadas à sua identidade e valores"
+    ],
+    approachText: "Na escuta psicanalítica, você encontra um lugar seguro para falar livremente, sem julgamentos, elaborando o que sente no seu próprio ritmo.",
+    whatsappMessage: "Olá, Ana Camila! Vim pela página de Autoconhecimento e gostaria de conversar sobre atendimento psicológico.",
+    ctaButtonText: "Quero iniciar meu processo de autoconhecimento"
   }
 ];

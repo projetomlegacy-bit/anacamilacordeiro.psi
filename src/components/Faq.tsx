@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HelpCircle, Plus, Minus, MessageCircle } from "lucide-react";
 import { FAQ_DATA, getWhatsAppUrl } from "../data/content";
+import { trackWhatsAppConversion } from "../utils/analytics";
 
 interface FaqProps {
   onOpenBooking?: () => void;
@@ -88,6 +89,7 @@ export const Faq: React.FC<FaqProps> = () => {
             href={getWhatsAppUrl("Olá, Ana! Vim pelo site e gostaria de tirar uma dúvida.")}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppConversion("FAQ - Conversar pelo WhatsApp")}
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 font-semibold h-11 px-8"
           >
             <MessageCircle className="h-5 w-5" />

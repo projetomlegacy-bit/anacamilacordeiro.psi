@@ -38,36 +38,51 @@ export const PrivacyModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
         <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
           <p>
-            A privacidade e a confidencialidade são pilares fundamentais do exercício da psicologia e do
-            Código de Ética Profissional do Psicólogo (Resolução CFP nº 010/2005), bem como da Lei Geral de
-            Proteção de Dados (LGPD - Lei nº 13.709/2018).
+            A privacidade, a inviolabilidade e a confidencialidade são premissas fundamentais da atuação clínica de
+            <strong className="text-primary font-semibold"> Dra. Ana Camila Cordeiro</strong> (CRP 06/162019 SP), em estrita
+            observância ao Código de Ética Profissional do Psicólogo (Resolução CFP nº 010/2005) e à
+            <strong className="text-primary font-semibold"> Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018)</strong>.
           </p>
 
-          <h4 className="font-semibold text-primary text-base pt-2">1. Coleta e Uso de Informações (Zero Armazenamento no Servidor)</h4>
+          <h4 className="font-semibold text-primary text-base pt-2">1. Identificação do Controlador e Encarregado (DPO)</h4>
           <p>
-            Este site funciona de forma estática e não armazena dados em servidores ou bancos de dados desprotegidos.
-            Quando você preenche o formulário de agendamento, as informações (como nome, telefone e preferências)
-            são processadas exclusivamente no seu próprio navegador para gerar a mensagem inicial direcionada ao WhatsApp oficial da psicóloga.
-            A comunicação subsequente é protegida pela criptografia de ponta a ponta do próprio WhatsApp.
+            O tratamento de dados decorrente das interações neste site é realizado sob responsabilidade da psicóloga clínica
+            <strong className="text-foreground"> Ana Camila Cordeiro</strong>. Para quaisquer dúvidas, solicitações ou exercício de
+            direitos garantidos pela LGPD, o canal oficial de atendimento é o telefone/WhatsApp <strong className="text-foreground">(11) 94668-0856</strong>.
           </p>
 
-          <h4 className="font-semibold text-primary text-base pt-2">2. Sigilo Profissional</h4>
+          <h4 className="font-semibold text-primary text-base pt-2">2. Princípio da Minimização de Dados (Privacy by Design)</h4>
           <p>
-            Todo o conteúdo compartilhado durante as sessões de psicoterapia é protegido por sigilo absoluto,
-            conforme determina o Código de Ética Profissional. O sigilo só poderá ser quebrado em situações
-            excepcionais previstas expressamente por lei.
+            Este website adota a arquitetura de <em className="text-foreground">Privacidade por Padrão</em>:
+          </p>
+          <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+            <li>
+              <strong className="text-foreground">Zero Armazenamento no Servidor:</strong> As informações inseridas no modal de agendamento (nome, WhatsApp, modalidade e preferências) não são gravadas em nenhum banco de dados ou servidor externo. Elas são processadas exclusivamente na memória volátil do seu navegador para estruturar a mensagem direcionada ao WhatsApp oficial.
+            </li>
+            <li>
+              <strong className="text-foreground">Criptografia de Ponta a Ponta:</strong> Toda a comunicação posterior e o agendamento de sessões ocorrem diretamente pelo aplicativo seguro do WhatsApp, protegido por criptografia de ponta a ponta.
+            </li>
+          </ul>
+
+          <h4 className="font-semibold text-primary text-base pt-2">3. Bases Legais do Tratamento (Art. 7º e 11 da LGPD)</h4>
+          <p>
+            O tratamento dos dados de contato preliminares fundamenta-se no <strong>consentimento do titular (Art. 7º, I)</strong> e na
+            <strong>execução de procedimentos preliminares a pedido do titular (Art. 7º, V)</strong> para fins exclusivos de contato profissional e agendamento de consultas.
           </p>
 
-          <h4 className="font-semibold text-primary text-base pt-2">3. Segurança no Atendimento On-line</h4>
+          <h4 className="font-semibold text-primary text-base pt-2">4. Cookies e Tecnologias de Medição</h4>
           <p>
-            Os atendimentos on-line ocorrem por plataformas que utilizam criptografia de ponta a ponta.
-            Recomenda-se que a paciente esteja em local privativo, com fones de ouvido e conexão segura.
+            Este site utiliza cookies técnicos essenciais (como a memorização de sua preferência de privacidade) e tecnologias de medição de tráfego e conversão (Google Analytics e Meta Pixel). Esses recursos nos ajudam a entender a navegação sem identificar pessoalmente a paciente. Você pode configurar ou bloquear cookies a qualquer momento nas configurações do seu navegador de internet.
           </p>
 
-          <h4 className="font-semibold text-primary text-base pt-2">4. Contato do Encarregado</h4>
+          <h4 className="font-semibold text-primary text-base pt-2">5. Sigilo Profissional Absoluto e Dados de Saúde</h4>
           <p>
-            Para qualquer dúvida ou solicitação sobre o tratamento de seus dados, entre em contato pelo telefone
-            (11) 94668-0856.
+            Nenhum dado sensível de saúde mental é coletado ou exposto através deste site. Todas as questões compartilhadas no espaço de psicoterapia (presencial ou on-line) são resguardadas por sigilo profissional incondicional, conforme determina o artigo 9º do Código de Ética Profissional do Psicólogo e normas do Conselho Federal de Psicologia (CFP).
+          </p>
+
+          <h4 className="font-semibold text-primary text-base pt-2">6. Direitos do Titular (Art. 18 da LGPD)</h4>
+          <p>
+            Você possui o direito de solicitar a qualquer momento a confirmação da existência de tratamento, a correção de dados, a eliminação de dados de contato ou a revogação de consentimento, mediante simples mensagem pelo WhatsApp oficial.
           </p>
         </div>
 

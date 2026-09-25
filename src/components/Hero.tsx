@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { getWhatsAppUrl } from "../data/content";
+import { trackWhatsAppConversion } from "../utils/analytics";
 
 interface HeroProps {
   onOpenBooking?: () => void;
@@ -13,6 +14,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleHeroCtaClick = () => {
+    trackWhatsAppConversion("Hero - Falar comigo");
   };
 
   return (
@@ -94,6 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 href={getWhatsAppUrl("Olá, Ana Camila! Vim pelo site e gostaria de conversar sobre atendimento psicológico.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleHeroCtaClick}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring gradient-orange text-orange-foreground shadow-warm hover:brightness-110 hover:-translate-y-0.5 transition-all font-semibold h-11 sm:h-12 rounded-xl px-7 sm:px-8 text-sm sm:text-base group"
               >
                 <span>Falar comigo</span>

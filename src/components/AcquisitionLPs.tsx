@@ -10,6 +10,7 @@ import {
   Video,
 } from "lucide-react";
 import { ACQUISITION_LPS, getWhatsAppUrl } from "../data/content";
+import { trackWhatsAppConversion } from "../utils/analytics";
 
 interface AcquisitionLPsProps {
   currentLpSlug: string | null;
@@ -158,6 +159,7 @@ export const AcquisitionLPs: React.FC<AcquisitionLPsProps> = ({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppConversion(`LP (${currentLp.navTitle}) - Top Header Falar com Ana Camila`)}
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold py-2 px-4 rounded-xl gradient-orange text-orange-foreground shadow-sm hover:brightness-110 active:scale-95 transition-all"
           >
             <MessageCircle className="w-4 h-4 shrink-0" />
@@ -320,6 +322,7 @@ export const AcquisitionLPs: React.FC<AcquisitionLPsProps> = ({
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppConversion(`LP (${currentLp.navTitle}) - In-Page CTA ${currentLp.ctaButtonText}`)}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl text-sm sm:text-base font-semibold px-6 sm:px-8 py-3.5 sm:py-4 gradient-orange text-orange-foreground shadow-warm hover:brightness-110 active:scale-98 transition-all"
             >
               <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -338,6 +341,7 @@ export const AcquisitionLPs: React.FC<AcquisitionLPsProps> = ({
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppConversion(`LP (${currentLp.navTitle}) - Mobile Sticky CTA ${currentLp.ctaButtonText}`)}
           className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold h-12 px-4 gradient-orange text-orange-foreground shadow-warm active:scale-98 transition-all"
         >
           <MessageCircle className="w-5 h-5 shrink-0" />
