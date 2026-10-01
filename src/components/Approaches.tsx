@@ -95,7 +95,7 @@ export const Approaches: React.FC = () => {
           <div className="relative bg-[#FAF4F0] p-3 sm:p-5 md:p-6 rounded-3xl sm:rounded-[2.25rem] shadow-soft border border-border/40 transition-all duration-500 hover:shadow-warm">
             <div className="overflow-hidden rounded-2xl sm:rounded-[1.75rem]">
               <img
-                src="/images/psicologa-ana-camila-cordeiro-consultorio-jundiai.webp"
+                src="/images/psicologa-ana-camila-cordeiro-atendimento-online-jundiai.webp"
                 alt="Consultório acolhedor de psicologia da Dra. Ana Camila Cordeiro em Jundiaí - SP"
                 title="Consultório de Psicologia Ana Camila Cordeiro - Jundiaí e On-line"
                 className="w-full h-auto object-cover max-h-[520px] transition-transform duration-700 hover:scale-[1.01]"

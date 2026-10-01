@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { getWhatsAppUrl } from "../data/content";
 import { trackWhatsAppConversion } from "../utils/analytics";
@@ -8,6 +8,29 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
+  const [desktopHeroSrc, setDesktopHeroSrc] = useState(
+    "/images/psicoterapia-mulheres-jundiai-hero.webp"
+  );
+  const [mobileHeroSrc, setMobileHeroSrc] = useState(
+    "/images/psicoterapia-mulheres-jundiai-hero-mobile.webp"
+  );
+
+  const handleDesktopImgError = () => {
+    if (desktopHeroSrc.endsWith(".jpg")) {
+      setDesktopHeroSrc("/images/psicoterapia-mulheres-jundiai-hero.webp");
+    } else if (desktopHeroSrc.includes("Gemini_Generated_Image")) {
+      setDesktopHeroSrc("/images/psicoterapia-mulheres-jundiai-hero-desktop.webp");
+    }
+  };
+
+  const handleMobileImgError = () => {
+    if (mobileHeroSrc.endsWith(".jpg")) {
+      setMobileHeroSrc("/images/psicoterapia-mulheres-jundiai-hero-mobile.webp");
+    } else if (mobileHeroSrc.includes("Gemini_Generated_Image")) {
+      setMobileHeroSrc("/images/psicoterapia-mulheres-jundiai-hero-mobile.webp");
+    }
+  };
+
   const handleScrollToAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById("about");
@@ -30,15 +53,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       <div className="absolute inset-0 pointer-events-none select-none">
         {/* Desktop / Tablet Landscape Background Image (min-width: 768px) */}
         <picture>
-          <source
-            type="image/webp"
-            srcSet="/images/psicoterapia-mulheres-jundiai-hero-desktop.webp"
-            media="(min-width: 768px)"
-          />
           <img
-            src="/images/psicoterapia-mulheres-jundiai-hero-desktop.webp"
+            src={desktopHeroSrc}
+            onError={handleDesktopImgError}
             alt="Ana Camila Cordeiro, psicóloga clínica com orientação psicanalítica em Jundiaí e atendimento on-line"
-            className="hidden md:block w-full h-full object-cover object-[80%_center] lg:object-[85%_top]"
+            className="hidden md:block w-full h-full object-cover object-[85%_center] lg:object-[85%_35%]"
             fetchPriority="high"
             decoding="async"
             width="1600"
@@ -50,9 +69,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         <div className="md:hidden absolute inset-x-0 top-0 h-[380px] sm:h-[420px] flex justify-center overflow-hidden">
           <div className="relative w-full max-w-sm sm:max-w-md h-full">
             <img
-              src="/images/psicoterapia-mulheres-jundiai-hero-mobile.webp"
+              src={mobileHeroSrc}
+              onError={handleMobileImgError}
               alt="Psicóloga Ana Camila Cordeiro - Psicoterapia feminina em Jundiaí e on-line com foco em ansiedade e luto"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-[78%_center]"
               fetchPriority="high"
               loading="eager"
               decoding="sync"
