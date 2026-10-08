@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     { label: "Experiências", href: "#symptoms" },
     { label: "Abordagem", href: "#approaches" },
     { label: "Atendimento", href: "#services" },
-    { label: "Depoimentos", href: "#testimonials" },
+    // { label: "Depoimentos", href: "#testimonials" }, // Reativar quando os relatos forem inseridos
     { label: "FAQ", href: "#faq" },
     { label: "Contato", href: "#contact" },
   ];
